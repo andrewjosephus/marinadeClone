@@ -26,7 +26,7 @@ const WelcomeBox: React.FC = function () {
   return (
     <Wrapper>
       <Title>
-        Welcome to <AppName>marinade!</AppName>
+        Welcome to <AppName>marinade!!!!!</AppName>
       </Title>
 
       <Subtitle>
