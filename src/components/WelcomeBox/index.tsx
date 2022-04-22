@@ -17,7 +17,7 @@ const AppName = styled.span`
 const Subtitle = styled.p``;
 
 const Code = styled.code`
-  background-color: #eee;
+  background-color: pink;
   padding: 5px 8px;
   border-radius: 4px;
 `;
