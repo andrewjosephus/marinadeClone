@@ -6,87 +6,11 @@ import styled from 'styled-components';
 
 import WelcomeBox from '../components/WelcomeBox';
 import CenterLayout from '../layouts/CenterLayout';
-import { Header } from './styled';
-
-const Main = styled.main`
-  display: flex;
-  height: 200vh;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: azure;
-  font-family: 'Rubik', sans-serif;
-`;
-
-// const Header = styled.header`
-//   display: inherit;
-//   align-self: flex-start;
-//   justify-content: center;
-//   background-color: aliceblue;
-//   height: 5vh;
-//   width: 100%;
-// `;
-
-const List = styled.ul`
-  display: inherit;
-  width: 55%;
-  list-style: none;
-  justify-content: space-around;
-  padding-inline-start: 0px;
-
-  li {
-    font-weight: 700;
-  }
-`;
+import { Body, Header, Landing, List, Main, Page, Textbox } from './styled';
 
 // const Screen = ({ height, children }) => {
 //   return <Page height={height}>{children}</Page>;
 // };
-
-interface PageProps {
-  height: string;
-}
-
-const Page = styled.div<PageProps>`
-  display: inherit;
-  height: ${(props) => props.height};
-  justify-content: center;
-  align-items: center;
-`;
-
-const Body = styled.div`
-  display: inherit;
-  flex-direction: column;
-`;
-
-const Landing = styled.div`
-  display: inherit;
-  width: 55%;
-  justify-content: space-between;
-
-  span {
-    align-self: center;
-  }
-`;
-
-const Textbox = styled.div`
-  display: inherit;
-  flex-direction: column;
-  width: 50%;
-  justify-content: space-between;
-  h1 {
-    margin-block: 0;
-    font-size: 4em;
-    line-height: 1;
-  }
-  p {
-    margin-top: auto;
-    line-height: 1.5;
-    margin-block: 0;
-    font-size: 1.5em;
-  }
-`;
 
 const Home: NextPage = function () {
   return (
