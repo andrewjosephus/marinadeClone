@@ -8,10 +8,6 @@ import WelcomeBox from '../components/WelcomeBox';
 import CenterLayout from '../layouts/CenterLayout';
 import { Body, Header, Landing, List, Main, Page, Textbox } from './styled';
 
-// const Screen = ({ height, children }) => {
-//   return <Page height={height}>{children}</Page>;
-// };
-
 const Home: NextPage = function () {
   return (
     <CenterLayout>
