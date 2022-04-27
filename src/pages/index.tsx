@@ -1,16 +1,91 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 import WelcomeBox from '../components/WelcomeBox';
 import CenterLayout from '../layouts/CenterLayout';
+import { Header } from './styled';
 
 const Main = styled.main`
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 200vh;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+  background-color: azure;
+  font-family: 'Rubik', sans-serif;
+`;
+
+// const Header = styled.header`
+//   display: inherit;
+//   align-self: flex-start;
+//   justify-content: center;
+//   background-color: aliceblue;
+//   height: 5vh;
+//   width: 100%;
+// `;
+
+const List = styled.ul`
+  display: inherit;
+  width: 55%;
+  list-style: none;
+  justify-content: space-around;
+  padding-inline-start: 0px;
+
+  li {
+    font-weight: 700;
+  }
+`;
+
+// const Screen = ({ height, children }) => {
+//   return <Page height={height}>{children}</Page>;
+// };
+
+interface PageProps {
+  height: string;
+}
+
+const Page = styled.div<PageProps>`
+  display: inherit;
+  height: ${(props) => props.height};
+  justify-content: center;
+  align-items: center;
+`;
+
+const Body = styled.div`
+  display: inherit;
+  flex-direction: column;
+`;
+
+const Landing = styled.div`
+  display: inherit;
+  width: 55%;
+  justify-content: space-between;
+
+  span {
+    align-self: center;
+  }
+`;
+
+const Textbox = styled.div`
+  display: inherit;
+  flex-direction: column;
+  width: 50%;
+  justify-content: space-between;
+  h1 {
+    margin-block: 0;
+    font-size: 4em;
+    line-height: 1;
+  }
+  p {
+    margin-top: auto;
+    line-height: 1.5;
+    margin-block: 0;
+    font-size: 1.5em;
+  }
 `;
 
 const Home: NextPage = function () {
@@ -23,7 +98,39 @@ const Home: NextPage = function () {
       </Head>
 
       <Main>
-        <WelcomeBox />
+        <Header>
+          <List>
+            <li>
+              <Link href="/">hire me</Link>
+            </li>
+            <li>
+              <Link href="/">projects</Link>
+            </li>
+          </List>
+        </Header>
+        <Body>
+          <Page height={'95vh'}>
+            <Landing>
+              <Textbox>
+                <h1>Andrew Josephus</h1>
+                <p>
+                  Paragraph about me: Im a creative engineer who builds
+                  delightful web experiences. I can advise your company about
+                  the web platform, performance, creative user interactions, and
+                  usable machine learning.
+                </p>
+              </Textbox>
+              <Image
+                src="/placeholder.png"
+                height={450}
+                width={450}
+                alt="My face"
+              ></Image>
+            </Landing>
+          </Page>
+
+          <Page height={'100vh'}>Get started by editing</Page>
+        </Body>
       </Main>
     </CenterLayout>
   );
