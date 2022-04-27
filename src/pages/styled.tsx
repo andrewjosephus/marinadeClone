@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Main = styled.main`
   display: flex;
-  height: 200vh;
+  height: 150vh;
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
@@ -13,11 +13,12 @@ export const Main = styled.main`
 
 export const Header = styled.header`
   display: inherit;
-  align-self: flex-start;
   justify-content: center;
+  align-items: flex-end;
   background-color: aliceblue;
-  height: 5vh;
+  height: 10vh;
   width: 100%;
+  z-index: 50;
 `;
 
 export const List = styled.ul`
@@ -39,6 +40,7 @@ interface PageProps {
 export const Page = styled.div<PageProps>`
   display: inherit;
   height: ${(props) => props.height};
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -52,6 +54,8 @@ export const Landing = styled.div`
   display: inherit;
   width: 55%;
   justify-content: space-between;
+  flex-wrap: wrap;
+  height: 45vh;
 
   span {
     align-self: center;
@@ -75,3 +79,39 @@ export const Textbox = styled.div`
     font-size: 1.5em;
   }
 `;
+
+export const WriteupWrapper = styled.div`
+  height: 100vh;
+  display: inherit;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 55%;
+`;
+
+// interface WriteupProps {
+//   height: string;
+// }
+
+export const WriteupBlock = styled.div`
+  display: inherit;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const Writeup = styled.p`
+  line-height: 1.5;
+  font-size: 1.3em;
+`;
+
+export const YellowLine = styled.hr`
+  background-color: #fac832;
+  border: 0px;
+  margin: 50px auto;
+  width: 50%;
+  height: 5px;
+  border-radius: 5px;
+  max-width: 430px;
+  clear: both;
+`;
+
+export const WriteupTitles = styled.h1``;
