@@ -13,6 +13,8 @@ import {
   List,
   Main,
   Page,
+  StyledALink,
+  StyledLink,
   Textbox,
   Writeup,
   WriteupBlock,
@@ -34,10 +36,14 @@ const Home: NextPage = function () {
         <Header>
           <List>
             <li>
-              <Link href="/">hire me</Link>
+              <Link href="/" passHref>
+                <StyledLink>hire me</StyledLink>
+              </Link>
             </li>
             <li>
-              <Link href="/">projects</Link>
+              <Link href="/" passHref>
+                <StyledLink>projects</StyledLink>
+              </Link>
             </li>
           </List>
         </Header>
@@ -55,8 +61,8 @@ const Home: NextPage = function () {
               </Textbox>
               <Image
                 src="/placeholder.png"
-                height={450}
-                width={450}
+                height={330}
+                width={330}
                 alt="My face"
               ></Image>
             </Landing>
@@ -81,18 +87,23 @@ const Home: NextPage = function () {
               <WriteupBlock>
                 <WriteupTitles>Hire Me</WriteupTitles>
                 <Writeup>
-                  I've just ended an 8 year stint as a Senior Engineer at
-                  Google, where I worked on making music and art and all sorts
-                  of creative interactions with Machine Learning, web components
-                  and web standards, and the guts of Chromium. You can read a
-                  bit more about me and my past work. Most of my personal code
-                  is on GitHub or on Glitch.
+                  I've just ended an 2 year stint as a Pilot Trainee at the{` `}
+                  <StyledALink
+                    href="https://form.gov.sg/#!/6253a1db6f45270011b89833"
+                    target="_blank"
+                  >
+                    Republic of Singapore Air Force
+                  </StyledALink>
+                  , where I worked on not getting sent to detention barracks and
+                  all sorts of creative interactions with superiors, peers and
+                  instructors. You cannot read a bit more about me and my past
+                  work. Most of my personal code is on my local machine at home.
                 </Writeup>
                 <Writeup>
                   <strong>RSS Feeds: </strong>
-                  <Link href="/">the firehose</Link> |{` `}
-                  <Link href="/">the firehose</Link> |{` `}
-                  <Link href="/">the firehose</Link>
+                  <StyledALink>the firehose</StyledALink> |{` `}
+                  <StyledALink>the firehose</StyledALink> |{` `}
+                  <StyledALink>the firehose</StyledALink>
                 </Writeup>
                 <WriteupTitles>Projects</WriteupTitles>
                 <Writeup style={{ marginBottom: '60px' }}>
@@ -101,10 +112,7 @@ const Home: NextPage = function () {
                   of creative interactions with Machine Learning, web components
                   and web standards, and the guts of Chromium. You can read a
                   bit more about me and my past work. Most of my personal code
-                  is on GitHub or on Glitch. <br /> <br /> I am available for
-                  freelance work in a consulting capacity, or as a tech advisor.
-                  If you would like to get in touch with me about working with
-                  you, email me and we'll chat!
+                  is on GitHub or on Glitch.
                 </Writeup>
               </WriteupBlock>
             </WriteupWrapper>

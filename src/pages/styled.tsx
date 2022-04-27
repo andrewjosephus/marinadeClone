@@ -7,7 +7,6 @@ export const Main = styled.main`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: azure;
   font-family: 'Rubik', sans-serif;
 `;
 
@@ -15,7 +14,6 @@ export const Header = styled.header`
   display: inherit;
   justify-content: center;
   align-items: flex-end;
-  background-color: aliceblue;
   height: 10vh;
   width: 100%;
   z-index: 50;
@@ -30,6 +28,45 @@ export const List = styled.ul`
 
   li {
     font-weight: 700;
+  }
+`;
+
+export const StyledLink = styled.p`
+  position: relative;
+  display: inline;
+  :hover {
+    cursor: pointer;
+  }
+
+  :hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+  }
+  ::before {
+    content: '';
+    background-color: #fac832;
+    height: 2px;
+    bottom: -3px;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+`;
+
+export const StyledALink = styled.a`
+  position: relative;
+  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+  transition: all 0.25s ease;
+  color: #f83735;
+  :hover {
+    color: #fac832;
+    cursor: pointer;
   }
 `;
 
@@ -52,10 +89,9 @@ export const Body = styled.div`
 
 export const Landing = styled.div`
   display: inherit;
-  width: 55%;
+  width: 40%;
   justify-content: space-between;
   flex-wrap: wrap;
-  height: 45vh;
 
   span {
     align-self: center;
@@ -69,14 +105,14 @@ export const Textbox = styled.div`
   justify-content: space-between;
   h1 {
     margin-block: 0;
-    font-size: 4em;
+    font-size: 3.2em;
     line-height: 1;
   }
   p {
     margin-top: auto;
     line-height: 1.5;
     margin-block: 0;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 `;
 
@@ -85,7 +121,7 @@ export const WriteupWrapper = styled.div`
   display: inherit;
   flex-direction: column;
   align-items: flex-start;
-  width: 55%;
+  width: 40%;
 `;
 
 // interface WriteupProps {
@@ -100,7 +136,7 @@ export const WriteupBlock = styled.div`
 
 export const Writeup = styled.p`
   line-height: 1.5;
-  font-size: 1.3em;
+  font-size: 1.2em;
 `;
 
 export const YellowLine = styled.hr`
