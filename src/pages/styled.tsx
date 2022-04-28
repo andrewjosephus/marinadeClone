@@ -185,6 +185,15 @@ interface TitleProps {
 
 export const WriteupTitles = styled.h1<TitleProps>`
   margin-block-end: ${(props) => props.marginBlockEnd}px;
+  p {
+    margin-block-start: 0;
+  }
+`;
+
+export const Projectgrid = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: 30% 40% 30%;
 `;
 
 export const Projectgrid = styled.div`
@@ -209,10 +218,11 @@ export const Projectlist = styled.ul`
   margin-block-start: 0;
   margin-block-end: 0;
   padding-inline-start: 0;
+  width: 100%;
 
   li {
     display: grid;
-    grid-template-columns: 45% 75%;
+    grid-template-columns: 45% 55%;
     position: relative;
     margin-top: 40px;
   }
@@ -225,5 +235,31 @@ export const Projectwriteup = styled.p`
   ::before {
     content: '→ ';
     font-weight: bold;
+  }
+`;
+
+export const Projectfilterarea = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  width: 50%;
+`;
+
+export const Projectbutton = styled.button`
+  width: fit-content;
+  margin-top: 5px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 50px;
+  color: white;
+  background-color: #273641;
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  line-height: 1.5;
+  font-size: 1.2em;
+
+  :hover {
+    cursor: pointer;
   }
 `;

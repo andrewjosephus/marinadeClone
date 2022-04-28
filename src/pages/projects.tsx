@@ -14,6 +14,8 @@ import {
   Main,
   Page,
   Projectblocks,
+  Projectbutton,
+  Projectfilterarea,
   Projectgrid,
   Projectlist,
   Projectwriteup,
@@ -71,7 +73,13 @@ const Home: NextPage = function () {
           </Page>
           <Page height={'120vh'}>
             <Projectgrid>
-              <p>filter tabs</p>
+              <Projectfilterarea>
+                <WriteupTitles marginBlockEnd={0}>
+                  Filter by <p>Year and Type</p>{' '}
+                </WriteupTitles>
+                <Projectbutton># javascript</Projectbutton>
+                <Projectbutton># css</Projectbutton>
+              </Projectfilterarea>
               <WriteupWrapper width={100}>
                 <WriteupTitles marginBlockEnd={5}>2021</WriteupTitles>
                 <RedLine></RedLine>
