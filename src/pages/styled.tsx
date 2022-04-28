@@ -188,6 +188,11 @@ export const Projectblocks = styled.div`
   margin-top: 10px;
   margin-bottom: 50px;
   width: 100%;
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  line-height: 1.5;
+  font-size: 1.2em;
 `;
 
 export const Projectlist = styled.ul`
@@ -207,11 +212,6 @@ export const Projectlist = styled.ul`
 export const Projectwriteup = styled.p`
   margin-block-start: 0;
   margin-block-end: 0;
-  display: block;
-  margin-left: 0;
-  margin-right: 0;
-  line-height: 1.5;
-  font-size: 1.2em;
 
   ::before {
     content: '→ ';
