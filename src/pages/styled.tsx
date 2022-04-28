@@ -196,6 +196,12 @@ export const Projectgrid = styled.div`
   grid-template-columns: 30% 40% 30%;
 `;
 
+export const Projectgrid = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: 30% 40% 30%;
+`;
+
 export const Projectblocks = styled.div`
   margin-top: 10px;
   margin-bottom: 50px;
