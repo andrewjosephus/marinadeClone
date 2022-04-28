@@ -137,6 +137,12 @@ export const WriteupBlock = styled.div`
 export const Writeup = styled.p`
   line-height: 1.5;
   font-size: 1.2em;
+
+  ul {
+    li {
+      margin-top: 20px;
+    }
+  }
 `;
 
 export const YellowLine = styled.hr`
