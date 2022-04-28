@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Main = styled.main`
   display: flex;
-  height: 150vh;
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
