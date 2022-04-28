@@ -166,4 +166,55 @@ export const YellowLine = styled.hr`
   clear: both;
 `;
 
-export const WriteupTitles = styled.h1``;
+export const RedLine = styled.hr`
+  background-color: #f83735;
+  border: 0px;
+  margin: 0px;
+  padding: 3px;
+  width: 7%;
+  max-width: 430px;
+  clear: both;
+`;
+
+interface TitleProps {
+  marginBlockEnd: number;
+}
+
+export const WriteupTitles = styled.h1<TitleProps>`
+  margin-block-end: ${(props) => props.marginBlockEnd}px;
+`;
+
+export const Projectblocks = styled.div`
+  margin-top: 10px;
+  margin-bottom: 50px;
+  width: 100%;
+`;
+
+export const Projectlist = styled.ul`
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+
+  li {
+    display: grid;
+    grid-template-columns: 45% 75%;
+    position: relative;
+    margin-top: 40px;
+  }
+`;
+
+export const Projectwriteup = styled.p`
+  margin-block-start: 0;
+  margin-block-end: 0;
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  line-height: 1.5;
+  font-size: 1.2em;
+
+  ::before {
+    content: '→ ';
+    font-weight: bold;
+  }
+`;
