@@ -65,7 +65,7 @@ const Home: NextPage = function () {
             </Landing>
           </Page>
           <Page height={'110vh'}>
-            <WriteupWrapper>
+            <WriteupWrapper width={40}>
               <Writeup>
                 For the last decade I've been working on user centered projects,
                 from delivering a feature to the billions of users of Chrome, to

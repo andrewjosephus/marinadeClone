@@ -120,13 +120,16 @@ export const Textbox = styled.div<TextboxProps>`
     font-size: 1.2em;
   }
 `;
+interface WriteupWrapperProps {
+  width: number;
+}
 
-export const WriteupWrapper = styled.div`
+export const WriteupWrapper = styled.div<WriteupWrapperProps>`
   height: 100vh;
   display: inherit;
   flex-direction: column;
   align-items: flex-start;
-  width: 40%;
+  width: ${(props) => props.width}%;
 `;
 
 // interface WriteupProps {
@@ -182,6 +185,12 @@ interface TitleProps {
 
 export const WriteupTitles = styled.h1<TitleProps>`
   margin-block-end: ${(props) => props.marginBlockEnd}px;
+`;
+
+export const Projectgrid = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: 30% 40% 30%;
 `;
 
 export const Projectblocks = styled.div`

@@ -69,7 +69,7 @@ const Home: NextPage = function () {
           </Page>
 
           <Page height={'100vh'}>
-            <WriteupWrapper>
+            <WriteupWrapper width={40}>
               <WriteupBlock>
                 <Writeup>
                   I've just ended an 8 year stint as a Senior Engineer at

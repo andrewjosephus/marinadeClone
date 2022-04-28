@@ -14,6 +14,7 @@ import {
   Main,
   Page,
   Projectblocks,
+  Projectgrid,
   Projectlist,
   Projectwriteup,
   RedLine,
@@ -69,80 +70,85 @@ const Home: NextPage = function () {
             </Landing>
           </Page>
           <Page height={'120vh'}>
-            <WriteupWrapper>
-              <WriteupTitles marginBlockEnd={5}>2021</WriteupTitles>
-              <RedLine></RedLine>
-              <Projectblocks>
-                <Projectlist>
-                  <li>
-                    <StyledALink>Outsystems Traineeship</StyledALink>
-                    <Projectwriteup>
-                      Took part in a traineeship using the Outsystems platform
-                      to create enterprise system for Advanced Micro Foundaries
-                    </Projectwriteup>
-                  </li>
-                  <li>
-                    <StyledALink>Outsystems Certification</StyledALink>
-                    <Projectwriteup>
-                      Completed an Outsystems Traditonal Web Certification exam
-                    </Projectwriteup>
-                  </li>
-                  <li>
-                    <StyledALink>Outsystems Bootcamp</StyledALink>
-                    <Projectwriteup>
-                      Completed an Outsystems Traditonal Web Certification
-                      bootcamp
-                    </Projectwriteup>
-                  </li>
-                </Projectlist>
-              </Projectblocks>
-              <WriteupTitles marginBlockEnd={5}>2020</WriteupTitles>
-              <RedLine></RedLine>
-              <Projectblocks>
-                <Projectlist>
-                  <li>
-                    <StyledALink>Created first freelance website</StyledALink>
-                    <Projectwriteup>
-                      Got my first freelance web developer job to create a
-                      website
-                    </Projectwriteup>
-                  </li>
-                  <li>
-                    <StyledALink>Started learning Javascript</StyledALink>
-                    <Projectwriteup>
-                      Went back to learning javascript after years of not
-                      reading any code
-                    </Projectwriteup>
-                  </li>
-                  <li>
-                    <StyledALink>Started learning HTML and CSS</StyledALink>
-                    <Projectwriteup>
-                      Started learning HTML and CSS to begin my developer
-                      journey
-                    </Projectwriteup>
-                  </li>
-                  <li>
-                    <StyledALink>Ended career with airforce</StyledALink>
-                    <Projectwriteup>
-                      Ended my contract with the force as I couldn't fly
-                      properly :(
-                    </Projectwriteup>
-                  </li>
-                </Projectlist>
-              </Projectblocks>
-              <WriteupTitles marginBlockEnd={5}>2019</WriteupTitles>
-              <RedLine></RedLine>
-              <Projectblocks>
-                <Projectlist>
-                  <li>
-                    <StyledALink>Flying planes</StyledALink>
-                    <Projectwriteup>
-                      Was a pilot once. Maybe in another life
-                    </Projectwriteup>
-                  </li>
-                </Projectlist>
-              </Projectblocks>
-            </WriteupWrapper>
+            <Projectgrid>
+              <p>filter tabs</p>
+              <WriteupWrapper width={100}>
+                <WriteupTitles marginBlockEnd={5}>2021</WriteupTitles>
+                <RedLine></RedLine>
+                <Projectblocks>
+                  <Projectlist>
+                    <li>
+                      <StyledALink>Outsystems Traineeship</StyledALink>
+                      <Projectwriteup>
+                        Took part in a traineeship using the Outsystems platform
+                        to create enterprise system for Advanced Micro
+                        Foundaries
+                      </Projectwriteup>
+                    </li>
+                    <li>
+                      <StyledALink>Outsystems Certification</StyledALink>
+                      <Projectwriteup>
+                        Completed an Outsystems Traditonal Web Certification
+                        exam
+                      </Projectwriteup>
+                    </li>
+                    <li>
+                      <StyledALink>Outsystems Bootcamp</StyledALink>
+                      <Projectwriteup>
+                        Completed an Outsystems Traditonal Web Certification
+                        bootcamp
+                      </Projectwriteup>
+                    </li>
+                  </Projectlist>
+                </Projectblocks>
+                <WriteupTitles marginBlockEnd={5}>2020</WriteupTitles>
+                <RedLine></RedLine>
+                <Projectblocks>
+                  <Projectlist>
+                    <li>
+                      <StyledALink>Created first freelance website</StyledALink>
+                      <Projectwriteup>
+                        Got my first freelance web developer job to create a
+                        website
+                      </Projectwriteup>
+                    </li>
+                    <li>
+                      <StyledALink>Started learning Javascript</StyledALink>
+                      <Projectwriteup>
+                        Went back to learning javascript after years of not
+                        reading any code
+                      </Projectwriteup>
+                    </li>
+                    <li>
+                      <StyledALink>Started learning HTML and CSS</StyledALink>
+                      <Projectwriteup>
+                        Started learning HTML and CSS to begin my developer
+                        journey
+                      </Projectwriteup>
+                    </li>
+                    <li>
+                      <StyledALink>Ended career with airforce</StyledALink>
+                      <Projectwriteup>
+                        Ended my contract with the force as I couldn't fly
+                        properly :(
+                      </Projectwriteup>
+                    </li>
+                  </Projectlist>
+                </Projectblocks>
+                <WriteupTitles marginBlockEnd={5}>2019</WriteupTitles>
+                <RedLine></RedLine>
+                <Projectblocks>
+                  <Projectlist>
+                    <li>
+                      <StyledALink>Flying planes</StyledALink>
+                      <Projectwriteup>
+                        Was a pilot once. Maybe in another life
+                      </Projectwriteup>
+                    </li>
+                  </Projectlist>
+                </Projectblocks>
+              </WriteupWrapper>
+            </Projectgrid>
           </Page>
         </Body>
       </Main>
