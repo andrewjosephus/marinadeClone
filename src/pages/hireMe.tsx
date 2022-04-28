@@ -62,6 +62,63 @@ const Home: NextPage = function () {
               ></Image>
             </Landing>
           </Page>
+          <Page height={'110vh'}>
+            <WriteupWrapper>
+              <Writeup>
+                For the last decade I've been working on user centered projects,
+                from delivering a feature to the billions of users of Chrome, to
+                taking a machine learning model and making it relevant to
+                someone with no technical training. Nowadays I work freelance as
+                a tech advisor or consultant, helping teams understand their
+                users and their processes.
+              </Writeup>
+              <Writeup>I can help your team with:</Writeup>
+              <Writeup>
+                <ul>
+                  <li>
+                    <strong>project scoping:</strong> figure out and prioritize
+                    the core features of your application based on what your
+                    users actually need
+                  </li>
+                  <li>
+                    <strong>user experience design/research:</strong> work with
+                    you to design interactions that are easy to use and
+                    intuitive for your users
+                  </li>
+                  <li>
+                    <strong>data visualizations:</strong> tell a story through
+                    your data, in a way that is easy to understand, self
+                    explanatory and interesting
+                  </li>
+                  <li>
+                    <strong>debugging your team:</strong> help you figure out
+                    why your team might be stuck and have trouble focusing on
+                    features or delivering them
+                  </li>
+                  <li>
+                    <strong>engineering:</strong> answer technical questions
+                    about web best practices (eg. the performance and
+                    accessibility of your product), do code reviews, or offer
+                    feedback and suggestions for improvement
+                  </li>
+                  <li>
+                    <strong>mentorship, guidance & leadership:</strong> I can
+                    help you brainstorm creative ideas, offer feedback on your
+                    written materials and presentations, and help you craft your
+                    key messaging.
+                  </li>
+                </ul>
+              </Writeup>
+              <Writeup>
+                If this sounds like something you're interested in, send me an
+                {` `}
+                <StyledALink href="https://www.youtube.com/watch?v=XOi2jFIhZhA">
+                  email!
+                </StyledALink>
+              </Writeup>
+            </WriteupWrapper>
+            <YellowLine></YellowLine>
+          </Page>
         </Body>
       </Main>
     </CenterLayout>
