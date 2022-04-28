@@ -14,31 +14,46 @@ import {
   WriteupWrapper,
 } from '../pages/styled';
 
-const useToggleKeyword = () => {
-  const [on, setOn] = React.useState(false);
-  const toggle = () => setOn(!on);
-  return { on, toggle };
-};
+// return <Projectbutton onClick={setOn(true)}># {children}</Projectbutton>;
 
-export const Keyword = () => {
+export const Keyword = ({ children }) => {
+  const useFilter = (value) => {
+    const [selected, setSelected] = React.useState([]);
+
+    const selectedArr = [...selected];
+    if (selectedArr.includes(value)) {
+      console.log('removing');
+      selectedArr.splice(selectedArr.indexOf(value), 1);
+      setSelected(selectedArr);
+    } else {
+      console.log('adding');
+      selectedArr.push(value);
+    }
+    setSelected(selectedArr);
+    return selected;
+  };
+
+  const selected = useFilter(children);
+
+  console.log(selected);
+
+  const useToggleKeyword = () => {
+    const [on, setOn] = React.useState(false);
+    const toggle = () => setOn(!on);
+    return { on, toggle };
+  };
   const { on, toggle } = useToggleKeyword();
+
+  //   console.log(selected);
 
   return (
     <Projectbutton
       onClick={toggle}
       style={on ? { backgroundColor: 'red' } : null}
     >
-      # Javascript
+      # {children}
     </Projectbutton>
   );
-};
-
-// return <Projectbutton onClick={setOn(true)}># {children}</Projectbutton>;
-
-const Filter = ({ value }) => {
-  const [selected, setSelected] = React.useState([]);
-  setSelected(value);
-  return console.log(selected);
 };
 
 function Projects({ initialSet = null, step = 1 }) {
