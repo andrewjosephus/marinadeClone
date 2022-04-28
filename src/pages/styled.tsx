@@ -24,6 +24,7 @@ export const List = styled.ul`
   list-style: none;
   justify-content: space-around;
   padding-inline-start: 0px;
+  align-items: baseline;
 
   li {
     font-weight: 700;
@@ -64,7 +65,7 @@ export const StyledALink = styled.a`
   transition: all 0.25s ease;
   color: #f83735;
   :hover {
-    color: #fac832;
+    color: #1231b5;
     cursor: pointer;
   }
 `;

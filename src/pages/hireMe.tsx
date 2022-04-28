@@ -35,7 +35,9 @@ const Home: NextPage = function () {
         {/* header is 10vh */}
         <Header>
           <List>
-            <li>🏠</li>
+            <li style={{ fontFamily: 'og-emoji, sans-serif;' }}>
+              <Link href={'/'}>🏠</Link>
+            </li>
             <li>
               <Link href="/" passHref>
                 <StyledLink>hire me</StyledLink>
