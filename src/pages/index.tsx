@@ -50,7 +50,7 @@ const Home: NextPage = function () {
         <Body>
           <Page height={'55vh'}>
             <Landing>
-              <Textbox>
+              <Textbox justifyContent={'space-between'}>
                 <h1>Andrew Josephus</h1>
                 <p>
                   Paragraph about me: Im a creative engineer who builds

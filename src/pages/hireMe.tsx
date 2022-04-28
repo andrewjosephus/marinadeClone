@@ -53,7 +53,7 @@ const Home: NextPage = function () {
         <Body>
           <Page height={'55vh'}>
             <Landing>
-              <Textbox>
+              <Textbox justifyContent={'center'}>
                 <h1>Let's work together</h1>
               </Textbox>
               <Image
