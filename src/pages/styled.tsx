@@ -99,11 +99,15 @@ export const Landing = styled.div`
   }
 `;
 
-export const Textbox = styled.div`
+interface TextboxProps {
+  justifyContent: string;
+}
+
+export const Textbox = styled.div<TextboxProps>`
   display: inherit;
   flex-direction: column;
   width: 50%;
-  justify-content: space-between;
+  justify-content: ${(props) => props.justifyContent};
   h1 {
     margin-block: 0;
     font-size: 3.2em;
@@ -135,7 +139,12 @@ export const WriteupBlock = styled.div`
   align-items: flex-start;
 `;
 
-export const Writeup = styled.p`
+export const Writeup = styled.div`
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
   line-height: 1.5;
   font-size: 1.2em;
 
