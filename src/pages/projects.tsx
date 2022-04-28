@@ -2,8 +2,11 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 import styled from 'styled-components';
 
+// import { Counter } from '../components/Counter';
+import Projectpage, { Keyword } from '../components/Counter';
 import WelcomeBox from '../components/WelcomeBox';
 import CenterLayout from '../layouts/CenterLayout';
 import {
@@ -77,7 +80,7 @@ const Home: NextPage = function () {
                 <WriteupTitles marginBlockEnd={0}>
                   Filter by <p>Year and Type</p>{' '}
                 </WriteupTitles>
-                <Projectbutton># javascript</Projectbutton>
+                <Keyword />
                 <Projectbutton># css</Projectbutton>
               </Projectfilterarea>
               <WriteupWrapper width={100}>
@@ -158,6 +161,7 @@ const Home: NextPage = function () {
               </WriteupWrapper>
             </Projectgrid>
           </Page>
+          {/* <Projectpage /> */}
         </Body>
       </Main>
     </CenterLayout>
