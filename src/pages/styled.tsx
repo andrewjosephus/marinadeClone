@@ -83,6 +83,7 @@ export const Page = styled.div<PageProps>`
 `;
 
 export const Body = styled.div`
+  width: 100%;
   display: inherit;
   flex-direction: column;
 `;
