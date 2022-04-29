@@ -14,42 +14,63 @@ import {
   WriteupWrapper,
 } from '../pages/styled';
 
-// return <Projectbutton onClick={setOn(true)}># {children}</Projectbutton>;
+const KeywordContext = React.createContext();
 
-export const Keyword = ({ children }) => {
-  const [on, setOn] = React.useState(false);
+const Keyword = ({ children }) => {
   const [selected, setSelected] = React.useState([]);
+  return (
+    <KeywordContext.Provider value={{ selected, setSelected }}>
+      {children}
+    </KeywordContext.Provider>
+  );
+};
+
+const useKeywordContext = () => {
+  const context = React.useContext(KeywordContext);
+  if (!context) {
+    throw new Error('use context properly');
+  }
+  return context;
+};
+
+const PreKeywordTag = ({ children }) => {
+  const [on, setOn] = React.useState(false);
+  const { selected, setSelected } = useKeywordContext();
 
   const toggle = () => {
     setOn(!on);
-    console.log('only works when toggled');
-
     const selectedArr = [...selected];
     if (selectedArr.includes(children)) {
-      console.log('removing');
       selectedArr.splice(selectedArr.indexOf(children), 1);
       setSelected(selectedArr);
     } else {
-      console.log('adding');
       selectedArr.push(children);
       setSelected(selectedArr);
     }
   };
 
-  console.log(selected);
+  React.useEffect(() => {});
 
-  // React.useEffect(() => {
-  // }, [selected]);
-
-  React.useEffect(() => {
-    console.log(children);
-  });
+  return (
     <Projectbutton
       onClick={toggle}
       style={on ? { backgroundColor: 'red' } : null}
     >
       # {children}
     </Projectbutton>
+  );
+};
+
+export const KeywordTag = () => {
+  return (
+    <>
+      <Keyword>
+        <PreKeywordTag>javascript</PreKeywordTag>
+        <PreKeywordTag>css</PreKeywordTag>
+        <PreKeywordTag>coding</PreKeywordTag>
+        <PreKeywordTag>life</PreKeywordTag>
+      </Keyword>
+    </>
   );
 };
 
