@@ -5,10 +5,11 @@ import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
-import { KeywordTag } from '../components/Counter';
+import { KeywordTag } from '../components/Filter';
 // import { Counter } from '../components/Counter';
 import WelcomeBox from '../components/WelcomeBox';
 import CenterLayout from '../layouts/CenterLayout';
+import ProjectList from './components/ProjectList';
 import {
   Body,
   Header,
@@ -34,6 +35,8 @@ import {
 } from './styled';
 
 const Home: NextPage = function () {
+  const arr = [{ writeup: 'blah blah blah', link: 'hello' }];
+
   return (
     <CenterLayout>
       <Head>
@@ -114,6 +117,7 @@ const Home: NextPage = function () {
                 <WriteupTitles marginBlockEnd={5}>2020</WriteupTitles>
                 <RedLine></RedLine>
                 <Projectblocks>
+                  <ProjectList />
                   <Projectlist>
                     <li>
                       <StyledALink>Created first freelance website</StyledALink>
