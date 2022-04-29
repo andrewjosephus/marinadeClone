@@ -17,34 +17,33 @@ import {
 // return <Projectbutton onClick={setOn(true)}># {children}</Projectbutton>;
 
 export const Keyword = ({ children }) => {
-  const useFilter = (value) => {
-    const [selected, setSelected] = React.useState([]);
+  const [on, setOn] = React.useState(false);
+  const [selected, setSelected] = React.useState([]);
+
+  const toggle = () => {
+    setOn(!on);
+    console.log('only works when toggled');
 
     const selectedArr = [...selected];
-    if (selectedArr.includes(value)) {
+    if (selectedArr.includes(children)) {
       console.log('removing');
-      selectedArr.splice(selectedArr.indexOf(value), 1);
+      selectedArr.splice(selectedArr.indexOf(children), 1);
       setSelected(selectedArr);
     } else {
       console.log('adding');
-      selectedArr.push(value);
+      selectedArr.push(children);
+      setSelected(selectedArr);
     }
-    setSelected(selectedArr);
-    return selected;
   };
-
-  const selected = useFilter(children);
 
   console.log(selected);
 
-  const useToggleKeyword = () => {
-    const [on, setOn] = React.useState(false);
-    const toggle = () => setOn(!on);
-    return { on, toggle };
-  };
-  const { on, toggle } = useToggleKeyword();
+  // React.useEffect(() => {
+  // }, [selected]);
 
-  //   console.log(selected);
+  React.useEffect(() => {
+    console.log(children);
+  });
 
   return (
     <Projectbutton
