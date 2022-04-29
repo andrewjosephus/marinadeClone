@@ -44,8 +44,6 @@ export const Keyword = ({ children }) => {
   React.useEffect(() => {
     console.log(children);
   });
-
-  return (
     <Projectbutton
       onClick={toggle}
       style={on ? { backgroundColor: 'red' } : null}
