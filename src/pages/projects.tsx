@@ -5,7 +5,7 @@ import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
-import { Keyword } from '../components/Counter';
+import { KeywordTag } from '../components/Counter';
 // import { Counter } from '../components/Counter';
 import WelcomeBox from '../components/WelcomeBox';
 import CenterLayout from '../layouts/CenterLayout';
@@ -80,8 +80,7 @@ const Home: NextPage = function () {
                 <WriteupTitles marginBlockEnd={0}>
                   Filter by <p>Year and Type</p>{' '}
                 </WriteupTitles>
-                <Keyword>javascript</Keyword>
-                <Keyword>css</Keyword>
+                <KeywordTag />
               </Projectfilterarea>
               <WriteupWrapper width={100}>
                 <WriteupTitles marginBlockEnd={5}>2021</WriteupTitles>
