@@ -239,14 +239,17 @@ export const Projectfilterarea = styled.div`
   width: 50%;
 `;
 
-export const Projectbutton = styled.button`
+interface ProjectButtonProps {
+  backgroundColor: string;
+}
+export const Projectbutton = styled.button<ProjectButtonProps>`
   width: fit-content;
   margin-top: 5px;
   padding: 8px 16px;
   border: 0;
   border-radius: 50px;
   color: white;
-  background-color: #273641;
+  background-color: ${(props) => props.backgroundColor};
   display: block;
   margin-left: 0;
   margin-right: 0;
