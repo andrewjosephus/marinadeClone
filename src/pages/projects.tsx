@@ -6,6 +6,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { KeywordTag } from '../components/Filter';
+import { HeaderBar } from '../components/Header';
 // import { Counter } from '../components/Counter';
 import WelcomeBox from '../components/WelcomeBox';
 import CenterLayout from '../layouts/CenterLayout';
@@ -46,23 +47,8 @@ const Home: NextPage = function () {
       </Head>
       <Main>
         {/* header is 10vh */}
-        <Header>
-          <List>
-            <li style={{ fontFamily: 'og-emoji, sans-serif;' }}>
-              <Link href={'/'}>🏠</Link>
-            </li>
-            <li>
-              <Link href="/" passHref>
-                <StyledLink>hire me</StyledLink>
-              </Link>
-            </li>
-            <li>
-              <Link href="/" passHref>
-                <StyledLink>projects</StyledLink>
-              </Link>
-            </li>
-          </List>
-        </Header>
+
+        <HeaderBar />
         <Body>
           <Page height={'55vh'}>
             <Landing>

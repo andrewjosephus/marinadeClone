@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+import { HeaderBar } from '../components/Header';
 import WelcomeBox from '../components/WelcomeBox';
 import CenterLayout from '../layouts/CenterLayout';
 import {
@@ -33,23 +34,7 @@ const Home: NextPage = function () {
       </Head>
       <Main>
         {/* header is 10vh */}
-        <Header>
-          <List>
-            <li style={{ fontFamily: 'og-emoji, sans-serif;' }}>
-              <Link href={'/'}>🏠</Link>
-            </li>
-            <li>
-              <Link href="/" passHref>
-                <StyledLink>hire me</StyledLink>
-              </Link>
-            </li>
-            <li>
-              <Link href="/" passHref>
-                <StyledLink>projects</StyledLink>
-              </Link>
-            </li>
-          </List>
-        </Header>
+        <HeaderBar />
         <Body>
           <Page height={'55vh'}>
             <Landing>
