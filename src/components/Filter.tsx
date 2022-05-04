@@ -102,15 +102,27 @@ export const KeywordTag = () => {
 export const ProjectSpace = () => {
   const keywordFiltering = () => {};
   const years = Object.keys(projectData);
+  years.reverse();
   return (
-    <>
-      <WriteupWrapper width={100}>
-        {years.map((year) => (
+    <WriteupWrapper width={100}>
+      {years.map((year) => (
+        <>
           <WriteupTitles marginBlockEnd={5} key={year}>
             {year}
           </WriteupTitles>
-        ))}
-      </WriteupWrapper>
-    </>
+          <RedLine></RedLine>
+          <Projectblocks>
+            <Projectlist>
+              {projectData[year].map((writeup) => (
+                <li key={writeup}>
+                  <StyledALink>{writeup['title']}</StyledALink>
+                  <Projectwriteup>{writeup['detail']}</Projectwriteup>
+                </li>
+              ))}
+            </Projectlist>
+          </Projectblocks>
+        </>
+      ))}
+    </WriteupWrapper>
   );
 };
