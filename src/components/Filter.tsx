@@ -13,7 +13,7 @@ import {
   WriteupTitles,
   WriteupWrapper,
 } from '../pages/styled';
-import { listOfKeywords } from './Data';
+import { listOfKeywords, projectData } from './Data';
 
 interface TagProps {
   isSelected: boolean;
@@ -98,3 +98,31 @@ export const KeywordTag = () => {
 //     </>
 //   );
 // };
+
+export const ProjectSpace = () => {
+  const keywordFiltering = () => {};
+  const years = Object.keys(projectData);
+  years.reverse();
+  return (
+    <WriteupWrapper width={100}>
+      {years.map((year) => (
+        <>
+          <WriteupTitles marginBlockEnd={5} key={year}>
+            {year}
+          </WriteupTitles>
+          <RedLine></RedLine>
+          <Projectblocks>
+            <Projectlist>
+              {projectData[year].map((writeup) => (
+                <li key={writeup}>
+                  <StyledALink>{writeup['title']}</StyledALink>
+                  <Projectwriteup>{writeup['detail']}</Projectwriteup>
+                </li>
+              ))}
+            </Projectlist>
+          </Projectblocks>
+        </>
+      ))}
+    </WriteupWrapper>
+  );
+};
