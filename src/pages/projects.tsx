@@ -5,7 +5,7 @@ import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
-import { KeywordTag } from '../components/Filter';
+import { KeywordTag, ProjectSpace } from '../components/Filter';
 import { HeaderBar } from '../components/Header';
 // import { Counter } from '../components/Counter';
 import WelcomeBox from '../components/WelcomeBox';
@@ -71,6 +71,7 @@ const Home: NextPage = function () {
                 </WriteupTitles>
                 <KeywordTag />
               </Projectfilterarea>
+              <ProjectSpace />
               <WriteupWrapper width={100}>
                 <WriteupTitles marginBlockEnd={5}>2021</WriteupTitles>
                 <RedLine></RedLine>
