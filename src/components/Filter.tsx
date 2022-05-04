@@ -38,9 +38,70 @@ const Tag: React.FC<TagProps> = function (props) {
   );
 };
 
-export const KeywordTag = () => {
+const usekeywordFiltering = () => {
   const [selectedKeywords, setSelectedKeywords] = React.useState<string[]>([]);
-  console.log(selectedKeywords);
+
+  // for (let i = 0; i < years.length; i++) {
+  //   console.log(data[years[i]]);
+  // }
+
+  const filteredData = () => {
+    // return data;
+  };
+  // console.log(searchResults);
+
+  // searchValues.push();
+  // console.log(searchValues);
+
+  // data.forEach((value) => (for (let i = 0;data[value].length;i++){
+  //   console.log(data[year][i])
+  // });
+
+  // console.log(data);
+
+  const data = {};
+
+  React.useEffect(() => {
+    const years = Object.keys(projectData);
+    years.reverse();
+    console.log(years);
+
+    const searchValues: any[] = [];
+    selectedKeywords.forEach((keyword) => {
+      console.log(keyword);
+      let re = new RegExp(keyword, 'i');
+      console.log(re);
+
+      years.forEach((year) => {
+        if (data[year] == null) {
+          data[year] = [];
+        }
+        projectData[year].forEach((obj) => {
+          if (data[year].includes(obj)) {
+            return;
+          }
+          if (obj['title'].search(re) == -1) {
+            if (obj['detail'].search(re) != -1) {
+              data[year].push(obj);
+            }
+          } else {
+            data[year].push(obj);
+          }
+        });
+      });
+    });
+
+    console.log(searchValues);
+    console.log('search');
+    console.log(data);
+  }, [selectedKeywords]);
+
+  return { selectedKeywords, setSelectedKeywords };
+};
+
+export const KeywordTag = () => {
+  const { selectedKeywords, setSelectedKeywords } = usekeywordFiltering();
+  // console.log(selectedKeywords);
 
   const isKeywordSelected = (keyword: string) => {
     return selectedKeywords.includes(keyword);
@@ -88,19 +149,7 @@ export const KeywordTag = () => {
   // );
 };
 
-// const ListItem = ({ link, content }) => {
-//   return (
-//     <>
-//       <Projectlist>
-//         <StyledALink>{link}</StyledALink>
-//         <Projectwriteup>{content}</Projectwriteup>
-//       </Projectlist>
-//     </>
-//   );
-// };
-
 export const ProjectSpace = () => {
-  const keywordFiltering = () => {};
   const years = Object.keys(projectData);
   years.reverse();
   return (
@@ -114,7 +163,7 @@ export const ProjectSpace = () => {
           <Projectblocks>
             <Projectlist>
               {projectData[year].map((writeup) => (
-                <li key={writeup}>
+                <li key={writeup.title}>
                   <StyledALink>{writeup['title']}</StyledALink>
                   <Projectwriteup>{writeup['detail']}</Projectwriteup>
                 </li>
