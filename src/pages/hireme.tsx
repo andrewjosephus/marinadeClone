@@ -42,7 +42,7 @@ const Home: NextPage = function () {
                 <h1>Let's work together</h1>
               </Textbox>
               <Image
-                src="/placeholder.png"
+                src="/img2.jpg"
                 height={330}
                 width={330}
                 alt="My face"
