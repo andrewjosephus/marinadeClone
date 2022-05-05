@@ -63,7 +63,7 @@ const Home: NextPage = function () {
               ></Image>
             </Landing>
           </Page>
-          <Page height={'120vh'}>
+          <Page height={'130vh'}>
             <ProjectSpace />
           </Page>
         </Body>
