@@ -25,6 +25,9 @@ export function ProjectSpace() {
     setKeywords(keyword);
   }
 
+  if (Object.keys(data).length === 0) {
+    setData(projectData);
+  }
   const dataHolder = {};
 
   React.useEffect(() => {
