@@ -10,6 +10,7 @@ import {
   StyledALink,
   WriteupTitles,
   WriteupWrapper,
+  YellowLine,
 } from '../pages/styled';
 import { projectData } from './Data';
 import { KeywordTag } from './Filter';
@@ -87,6 +88,8 @@ export function ProjectSpace() {
             </Projectblocks>
           </>
         ))}
+
+        <YellowLine />
       </WriteupWrapper>
     </Projectgrid>
   );
