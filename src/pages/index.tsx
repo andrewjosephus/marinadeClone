@@ -48,7 +48,7 @@ const Home: NextPage = function () {
                 </p>
               </Textbox>
               <Image
-                src="/placeholder.png"
+                src="/img1.jpg"
                 height={330}
                 width={330}
                 alt="My face"
