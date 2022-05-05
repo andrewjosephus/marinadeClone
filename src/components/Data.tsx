@@ -6,7 +6,7 @@ export const listOfKeywords = [
   'learning',
 ];
 
-export const projectData = {
+export const projectData: any = {
   2021: [
     {
       title: 'Outsystems Traineeship',

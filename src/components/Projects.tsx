@@ -17,16 +17,16 @@ import { KeywordTag } from './Filter';
 
 export function ProjectSpace() {
   const [keywords, setKeywords] = React.useState<string[]>([]);
-  const [data, setData] = React.useState({});
+  const [data, setData] = React.useState<any>({});
 
-  function handleClick(keyword) {
+  function handleClick(keyword: string[]) {
     setKeywords(keyword);
   }
 
   if (Object.keys(data).length === 0) {
     setData(projectData);
   }
-  const dataHolder = {};
+  const dataHolder: any = {};
 
   React.useEffect(() => {
     const years = Object.keys(projectData);
@@ -35,11 +35,12 @@ export function ProjectSpace() {
     keywords.forEach((keyword) => {
       let re = new RegExp(keyword, 'i');
 
-      years.forEach((year) => {
+      years.forEach((year: string) => {
+        // How do I type this??
         if (dataHolder[year] == null) {
           dataHolder[year] = [];
         }
-        projectData[year].forEach((obj) => {
+        projectData[year].forEach((obj: { title: string; detail: string }) => {
           if (dataHolder[year].includes(obj)) {
             return;
           }
@@ -57,7 +58,7 @@ export function ProjectSpace() {
       });
     });
     setData(dataHolder);
-  }, [keywords]);
+  }, [dataHolder, keywords]);
 
   const years = Object.keys(data);
   years.reverse();
@@ -78,12 +79,14 @@ export function ProjectSpace() {
             <RedLine></RedLine>
             <Projectblocks>
               <Projectlist>
-                {data[year].map((writeup) => (
-                  <li key={writeup.title}>
-                    <StyledALink>{writeup['title']}</StyledALink>
-                    <Projectwriteup>{writeup['detail']}</Projectwriteup>
-                  </li>
-                ))}
+                {data[year].map(
+                  (writeup: { title: string; detail: string }) => (
+                    <li key={writeup.title}>
+                      <StyledALink>{writeup['title']}</StyledALink>
+                      <Projectwriteup>{writeup['detail']}</Projectwriteup>
+                    </li>
+                  )
+                )}
               </Projectlist>
             </Projectblocks>
           </>
