@@ -38,70 +38,13 @@ const Tag: React.FC<TagProps> = function (props) {
   );
 };
 
-const usekeywordFiltering = () => {
+interface KeywordTagProps {
+  onClick: (keyword: string) => void;
+}
+
+export const KeywordTag: React.FC<KeywordTagProps> = function (props) {
+  const { onClick } = props;
   const [selectedKeywords, setSelectedKeywords] = React.useState<string[]>([]);
-
-  // for (let i = 0; i < years.length; i++) {
-  //   console.log(data[years[i]]);
-  // }
-
-  const filteredData = () => {
-    // return data;
-  };
-  // console.log(searchResults);
-
-  // searchValues.push();
-  // console.log(searchValues);
-
-  // data.forEach((value) => (for (let i = 0;data[value].length;i++){
-  //   console.log(data[year][i])
-  // });
-
-  // console.log(data);
-
-  const data = {};
-
-  React.useEffect(() => {
-    const years = Object.keys(projectData);
-    years.reverse();
-    console.log(years);
-
-    const searchValues: any[] = [];
-    selectedKeywords.forEach((keyword) => {
-      console.log(keyword);
-      let re = new RegExp(keyword, 'i');
-      console.log(re);
-
-      years.forEach((year) => {
-        if (data[year] == null) {
-          data[year] = [];
-        }
-        projectData[year].forEach((obj) => {
-          if (data[year].includes(obj)) {
-            return;
-          }
-          if (obj['title'].search(re) == -1) {
-            if (obj['detail'].search(re) != -1) {
-              data[year].push(obj);
-            }
-          } else {
-            data[year].push(obj);
-          }
-        });
-      });
-    });
-
-    console.log(searchValues);
-    console.log('search');
-    console.log(data);
-  }, [selectedKeywords]);
-
-  return { selectedKeywords, setSelectedKeywords };
-};
-
-export const KeywordTag = () => {
-  const { selectedKeywords, setSelectedKeywords } = usekeywordFiltering();
-  // console.log(selectedKeywords);
 
   const isKeywordSelected = (keyword: string) => {
     return selectedKeywords.includes(keyword);
@@ -119,6 +62,8 @@ export const KeywordTag = () => {
     setSelectedKeywords(newSelectedKeywords);
   };
 
+  onClick(selectedKeywords);
+
   return (
     <>
       {listOfKeywords.map((keyword) => (
@@ -131,25 +76,11 @@ export const KeywordTag = () => {
       ))}
     </>
   );
-
-  // what map is doing to the arr
-
-  // |
-  // v
-
-  // return (
-  //   <>
-  //     <PreKeywordTag onClick={() => handleKeywordClick('javascript')}>
-  //       javascript
-  //     </PreKeywordTag>
-  //     <button>css</button>
-  //     <button>coding</button>
-  //     <button>life</button>
-  //   </>
-  // );
 };
 
-export const ProjectSpace = () => {
+const ProjectDetails = (data) => {
+  // const [details, setDetails] = React.useState({});
+  console.log(data);
   const years = Object.keys(projectData);
   years.reverse();
   return (
@@ -175,3 +106,5 @@ export const ProjectSpace = () => {
     </WriteupWrapper>
   );
 };
+
+// export const ProjectSpace = (data) => <ProjectDetails />;
