@@ -30,12 +30,12 @@ export const HeaderBar = () => {
           <Link href={'/'}>🏠</Link>
         </li>
         <li>
-          <Link href="/" passHref>
+          <Link href="/hireme" passHref>
             <StyledLink>hire me</StyledLink>
           </Link>
         </li>
         <li>
-          <Link href="/" passHref>
+          <Link href="/projects" passHref>
             <StyledLink>projects</StyledLink>
           </Link>
         </li>
