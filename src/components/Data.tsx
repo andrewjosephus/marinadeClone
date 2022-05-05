@@ -1,4 +1,10 @@
-export const listOfKeywords = ['javascript', 'css', 'coding', 'life'];
+export const listOfKeywords = [
+  'javascript',
+  'css',
+  'outsystems',
+  'pilot',
+  'learning',
+];
 
 export const projectData = {
   2021: [

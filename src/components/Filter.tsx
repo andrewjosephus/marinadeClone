@@ -38,9 +38,13 @@ const Tag: React.FC<TagProps> = function (props) {
   );
 };
 
-export const KeywordTag = () => {
+interface KeywordTagProps {
+  onClick: (keyword: string) => void;
+}
+
+export const KeywordTag: React.FC<KeywordTagProps> = function (props) {
+  const { onClick } = props;
   const [selectedKeywords, setSelectedKeywords] = React.useState<string[]>([]);
-  console.log(selectedKeywords);
 
   const isKeywordSelected = (keyword: string) => {
     return selectedKeywords.includes(keyword);
@@ -58,6 +62,8 @@ export const KeywordTag = () => {
     setSelectedKeywords(newSelectedKeywords);
   };
 
+  onClick(selectedKeywords);
+
   return (
     <>
       {listOfKeywords.map((keyword) => (
@@ -70,37 +76,11 @@ export const KeywordTag = () => {
       ))}
     </>
   );
-
-  // what map is doing to the arr
-
-  // |
-  // v
-
-  // return (
-  //   <>
-  //     <PreKeywordTag onClick={() => handleKeywordClick('javascript')}>
-  //       javascript
-  //     </PreKeywordTag>
-  //     <button>css</button>
-  //     <button>coding</button>
-  //     <button>life</button>
-  //   </>
-  // );
 };
 
-// const ListItem = ({ link, content }) => {
-//   return (
-//     <>
-//       <Projectlist>
-//         <StyledALink>{link}</StyledALink>
-//         <Projectwriteup>{content}</Projectwriteup>
-//       </Projectlist>
-//     </>
-//   );
-// };
-
-export const ProjectSpace = () => {
-  const keywordFiltering = () => {};
+const ProjectDetails = (data) => {
+  // const [details, setDetails] = React.useState({});
+  console.log(data);
   const years = Object.keys(projectData);
   years.reverse();
   return (
@@ -114,7 +94,7 @@ export const ProjectSpace = () => {
           <Projectblocks>
             <Projectlist>
               {projectData[year].map((writeup) => (
-                <li key={writeup}>
+                <li key={writeup.title}>
                   <StyledALink>{writeup['title']}</StyledALink>
                   <Projectwriteup>{writeup['detail']}</Projectwriteup>
                 </li>
@@ -126,3 +106,5 @@ export const ProjectSpace = () => {
     </WriteupWrapper>
   );
 };
+
+// export const ProjectSpace = (data) => <ProjectDetails />;

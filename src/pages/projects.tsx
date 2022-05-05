@@ -5,9 +5,9 @@ import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
-import { KeywordTag, ProjectSpace } from '../components/Filter';
+import { KeywordTag } from '../components/Filter';
 import { HeaderBar } from '../components/Header';
-// import { Counter } from '../components/Counter';
+import { ProjectSpace } from '../components/Projects';
 import WelcomeBox from '../components/WelcomeBox';
 import CenterLayout from '../layouts/CenterLayout';
 import ProjectList from './components/ProjectList';
@@ -64,15 +64,7 @@ const Home: NextPage = function () {
             </Landing>
           </Page>
           <Page height={'120vh'}>
-            <Projectgrid>
-              <Projectfilterarea>
-                <WriteupTitles marginBlockEnd={0}>
-                  Filter by <p>Year and Type</p>{' '}
-                </WriteupTitles>
-                <KeywordTag />
-              </Projectfilterarea>
-              <ProjectSpace />
-            </Projectgrid>
+            <ProjectSpace />
           </Page>
         </Body>
       </Main>
