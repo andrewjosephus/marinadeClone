@@ -17,11 +17,8 @@ import { KeywordTag } from './Filter';
 export function ProjectSpace() {
   const [keywords, setKeywords] = React.useState<string[]>([]);
   const [data, setData] = React.useState({});
-  console.log(keywords);
 
   function handleClick(keyword) {
-    console.log('in App');
-    console.log(keyword);
     setKeywords(keyword);
   }
 
@@ -58,13 +55,8 @@ export function ProjectSpace() {
         }
       });
     });
-    console.log('in logic');
-    console.log(dataHolder);
     setData(dataHolder);
   }, [keywords]);
-
-  console.log('outside logic');
-  console.log(data);
 
   const years = Object.keys(data);
   years.reverse();
