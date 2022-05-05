@@ -126,9 +126,6 @@ interface WriteupWrapperProps {
 
 export const WriteupWrapper = styled.div<WriteupWrapperProps>`
   height: 100vh;
-  display: inherit;
-  flex-direction: column;
-  align-items: flex-start;
   width: ${(props) => props.width}%;
 `;
 
