@@ -77,34 +77,3 @@ export const KeywordTag: React.FC<KeywordTagProps> = function (props) {
     </>
   );
 };
-
-const ProjectDetails = (data) => {
-  // const [details, setDetails] = React.useState({});
-  console.log(data);
-  const years = Object.keys(projectData);
-  years.reverse();
-  return (
-    <WriteupWrapper width={100}>
-      {years.map((year) => (
-        <>
-          <WriteupTitles marginBlockEnd={5} key={year}>
-            {year}
-          </WriteupTitles>
-          <RedLine></RedLine>
-          <Projectblocks>
-            <Projectlist>
-              {projectData[year].map((writeup) => (
-                <li key={writeup.title}>
-                  <StyledALink>{writeup['title']}</StyledALink>
-                  <Projectwriteup>{writeup['detail']}</Projectwriteup>
-                </li>
-              ))}
-            </Projectlist>
-          </Projectblocks>
-        </>
-      ))}
-    </WriteupWrapper>
-  );
-};
-
-// export const ProjectSpace = (data) => <ProjectDetails />;
