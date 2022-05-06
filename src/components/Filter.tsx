@@ -1,19 +1,7 @@
 import React from 'react';
 
-import {
-  Page,
-  Projectblocks,
-  Projectbutton,
-  Projectfilterarea,
-  Projectgrid,
-  Projectlist,
-  Projectwriteup,
-  RedLine,
-  StyledALink,
-  WriteupTitles,
-  WriteupWrapper,
-} from '../pages/styled';
-import { listOfKeywords, projectData } from './Data';
+import { Projectbutton } from '../pages/styled';
+import { listOfKeywords } from './Data';
 
 interface TagProps {
   isSelected: boolean;

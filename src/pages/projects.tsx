@@ -1,39 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
-import styled from 'styled-components';
 
-import { KeywordTag } from '../components/Filter';
 import { HeaderBar } from '../components/Header';
 import { ProjectSpace } from '../components/Projects';
-import WelcomeBox from '../components/WelcomeBox';
 import CenterLayout from '../layouts/CenterLayout';
-import ProjectList from './components/ProjectList';
-import {
-  Body,
-  Header,
-  Landing,
-  List,
-  Main,
-  Page,
-  Projectblocks,
-  Projectbutton,
-  Projectfilterarea,
-  Projectgrid,
-  Projectlist,
-  Projectwriteup,
-  RedLine,
-  StyledALink,
-  StyledLink,
-  Textbox,
-  Writeup,
-  WriteupBlock,
-  WriteupTitles,
-  WriteupWrapper,
-  YellowLine,
-} from './styled';
+import { Body, Landing, Main, Page, Textbox } from './styled';
 
 const Home: NextPage = function () {
   const arr = [{ writeup: 'blah blah blah', link: 'hello' }];
