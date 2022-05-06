@@ -24,12 +24,22 @@ interface DataHolder {
   [key: string]: ProjectData[];
 }
 
+interface Data {
+  [key: string]: ProjectData[];
+}
 export function ProjectSpace() {
   const [keywords, setKeywords] = React.useState<string[]>([]);
-  const [data, setData] = React.useState({});
+  const [data, setData] = React.useState<Data>({});
 
-  function handleClick(keyword: string[]) {
-    setKeywords(keyword);
+  function handleClick(keyword: string) {
+    const newSelectedKeywords = [...keywords];
+    if (keywords.includes(keyword)) {
+      const index = keywords.indexOf(keyword);
+      newSelectedKeywords.splice(index, 1);
+    } else {
+      newSelectedKeywords.push(keyword);
+    }
+    setKeywords(newSelectedKeywords);
   }
 
   if (Object.keys(data).length === 0) {

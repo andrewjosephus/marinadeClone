@@ -27,7 +27,7 @@ const Tag: React.FC<TagProps> = function (props) {
 };
 
 interface KeywordTagProps {
-  updateKeywords: (keyword: string[]) => void;
+  updateKeywords: (keyword: string) => void;
   selectedKeywords: string[];
 }
 
@@ -40,15 +40,7 @@ export const KeywordTag: React.FC<KeywordTagProps> = function (props) {
   };
 
   const handleKeywordClick = (keyword: string) => {
-    const newSelectedKeywords = [...selectedKeywords];
-    if (selectedKeywords.includes(keyword)) {
-      const index = selectedKeywords.indexOf(keyword);
-      newSelectedKeywords.splice(index, 1);
-    } else {
-      newSelectedKeywords.push(keyword);
-    }
-
-    updateKeywords(newSelectedKeywords);
+    updateKeywords(keyword);
   };
 
   return (
