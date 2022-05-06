@@ -26,7 +26,7 @@ interface DataHolder {
 
 export function ProjectSpace() {
   const [keywords, setKeywords] = React.useState<string[]>([]);
-  const [data, setData] = React.useState<any>({});
+  const [data, setData] = React.useState({});
 
   function handleClick(keyword: string[]) {
     setKeywords(keyword);
