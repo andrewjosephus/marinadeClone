@@ -39,7 +39,7 @@ const Tag: React.FC<TagProps> = function (props) {
 };
 
 interface KeywordTagProps {
-  onClick: (keyword: string) => void;
+  onClick: (keyword: string[]) => void;
 }
 
 export const KeywordTag: React.FC<KeywordTagProps> = function (props) {

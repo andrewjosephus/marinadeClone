@@ -6,7 +6,16 @@ export const listOfKeywords = [
   'learning',
 ];
 
-export const projectData = {
+interface ProjectData {
+  title: string;
+  detail: string;
+}
+
+interface DataHolder {
+  [key: string]: ProjectData[];
+}
+
+export const projectData: DataHolder = {
   2021: [
     {
       title: 'Outsystems Traineeship',
