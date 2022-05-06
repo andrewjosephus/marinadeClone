@@ -78,7 +78,7 @@ export function ProjectSpace() {
         <WriteupTitles marginBlockEnd={0}>
           Filter by <p>Year and Type</p>{' '}
         </WriteupTitles>
-        <KeywordTag onClick={handleClick} />
+        <KeywordTag updateKeywords={handleClick} selectedKeywords={keywords} />
       </Projectfilterarea>
       <WriteupWrapper width={100}>
         {years.map((year) => (

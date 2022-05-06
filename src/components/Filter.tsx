@@ -27,12 +27,13 @@ const Tag: React.FC<TagProps> = function (props) {
 };
 
 interface KeywordTagProps {
-  onClick: (keyword: string[]) => void;
+  updateKeywords: (keyword: string[]) => void;
+  selectedKeywords: string[];
 }
 
 export const KeywordTag: React.FC<KeywordTagProps> = function (props) {
-  const { onClick } = props;
-  const [selectedKeywords, setSelectedKeywords] = React.useState<string[]>([]);
+  const { updateKeywords, selectedKeywords } = props;
+  // const [selectedKeywords, setSelectedKeywords] = React.useState<string[]>([]);
 
   const isKeywordSelected = (keyword: string) => {
     return selectedKeywords.includes(keyword);
@@ -47,10 +48,8 @@ export const KeywordTag: React.FC<KeywordTagProps> = function (props) {
       newSelectedKeywords.push(keyword);
     }
 
-    setSelectedKeywords(newSelectedKeywords);
+    updateKeywords(newSelectedKeywords);
   };
-
-  onClick(selectedKeywords);
 
   return (
     <>
