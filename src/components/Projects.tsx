@@ -15,6 +15,15 @@ import {
 import { projectData } from './Data';
 import { KeywordTag } from './Filter';
 
+interface ProjectData {
+  title: string;
+  detail: string;
+}
+
+interface DataHolder {
+  [key: string]: ProjectData[];
+}
+
 export function ProjectSpace() {
   const [keywords, setKeywords] = React.useState<string[]>([]);
   const [data, setData] = React.useState<any>({});
@@ -26,7 +35,8 @@ export function ProjectSpace() {
   if (Object.keys(data).length === 0) {
     setData(projectData);
   }
-  const dataHolder: any = {};
+
+  const dataHolder: DataHolder = {};
 
   React.useEffect(() => {
     const years = Object.keys(projectData);
@@ -40,7 +50,7 @@ export function ProjectSpace() {
         if (dataHolder[year] == null) {
           dataHolder[year] = [];
         }
-        projectData[year].forEach((obj: { title: string; detail: string }) => {
+        projectData[year].forEach((obj: ProjectData) => {
           if (dataHolder[year].includes(obj)) {
             return;
           }

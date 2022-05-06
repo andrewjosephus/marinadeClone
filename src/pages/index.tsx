@@ -73,7 +73,7 @@ const Home: NextPage = function () {
                 <YellowLine></YellowLine>
               </WriteupBlock>
               <WriteupBlock>
-                <WriteupTitles>Hire Me</WriteupTitles>
+                <WriteupTitles marginBlockEnd={40}>Hire Me</WriteupTitles>
                 <Writeup>
                   I've just ended an 2 year stint as a Pilot Trainee at the{` `}
                   <StyledALink
@@ -93,7 +93,7 @@ const Home: NextPage = function () {
                   <StyledALink>the firehose</StyledALink> |{` `}
                   <StyledALink>the firehose</StyledALink>
                 </Writeup>
-                <WriteupTitles>Projects</WriteupTitles>
+                <WriteupTitles marginBlockEnd={40}>Projects</WriteupTitles>
                 <Writeup style={{ marginBottom: '60px' }}>
                   I've just ended an 8 year stint as a Senior Engineer at
                   Google, where I worked on making music and art and all sorts
