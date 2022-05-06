@@ -24,12 +24,22 @@ interface DataHolder {
   [key: string]: ProjectData[];
 }
 
+interface Data {
+  [key: string]: ProjectData[];
+}
 export function ProjectSpace() {
   const [keywords, setKeywords] = React.useState<string[]>([]);
-  const [data, setData] = React.useState({});
+  const [data, setData] = React.useState<Data>({});
 
-  function handleClick(keyword: string[]) {
-    setKeywords(keyword);
+  function handleClick(keyword: string) {
+    const newSelectedKeywords = [...keywords];
+    if (keywords.includes(keyword)) {
+      const index = keywords.indexOf(keyword);
+      newSelectedKeywords.splice(index, 1);
+    } else {
+      newSelectedKeywords.push(keyword);
+    }
+    setKeywords(newSelectedKeywords);
   }
 
   if (Object.keys(data).length === 0) {
@@ -78,7 +88,7 @@ export function ProjectSpace() {
         <WriteupTitles marginBlockEnd={0}>
           Filter by <p>Year and Type</p>{' '}
         </WriteupTitles>
-        <KeywordTag onClick={handleClick} />
+        <KeywordTag updateKeywords={handleClick} selectedKeywords={keywords} />
       </Projectfilterarea>
       <WriteupWrapper width={100}>
         {years.map((year) => (

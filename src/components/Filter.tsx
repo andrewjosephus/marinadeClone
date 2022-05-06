@@ -27,30 +27,21 @@ const Tag: React.FC<TagProps> = function (props) {
 };
 
 interface KeywordTagProps {
-  onClick: (keyword: string[]) => void;
+  updateKeywords: (keyword: string) => void;
+  selectedKeywords: string[];
 }
 
 export const KeywordTag: React.FC<KeywordTagProps> = function (props) {
-  const { onClick } = props;
-  const [selectedKeywords, setSelectedKeywords] = React.useState<string[]>([]);
+  const { updateKeywords, selectedKeywords } = props;
+  // const [selectedKeywords, setSelectedKeywords] = React.useState<string[]>([]);
 
   const isKeywordSelected = (keyword: string) => {
     return selectedKeywords.includes(keyword);
   };
 
   const handleKeywordClick = (keyword: string) => {
-    const newSelectedKeywords = [...selectedKeywords];
-    if (selectedKeywords.includes(keyword)) {
-      const index = selectedKeywords.indexOf(keyword);
-      newSelectedKeywords.splice(index, 1);
-    } else {
-      newSelectedKeywords.push(keyword);
-    }
-
-    setSelectedKeywords(newSelectedKeywords);
+    updateKeywords(keyword);
   };
-
-  onClick(selectedKeywords);
 
   return (
     <>
