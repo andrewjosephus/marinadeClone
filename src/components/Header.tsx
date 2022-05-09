@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -10,14 +11,14 @@ export const HeaderBar = () => {
       <Header>
         <List>
           <li>
-            <Link href="/hireme" passHref>
+            <a href="/hireme">
               <StyledLink>hire me</StyledLink>
-            </Link>
+            </a>
           </li>
           <li>
-            <Link href="/projects" passHref>
+            <a href="/projects">
               <StyledLink>projects</StyledLink>
-            </Link>
+            </a>
           </li>
         </List>
       </Header>
@@ -27,17 +28,17 @@ export const HeaderBar = () => {
     <Header>
       <List>
         <li style={{ fontFamily: 'og-emoji, sans-serif;' }}>
-          <Link href={'/'}>🏠</Link>
+          <a href={'/'}>🏠</a>
         </li>
         <li>
-          <Link href="/hireme" passHref>
+          <a href="/hireme">
             <StyledLink>hire me</StyledLink>
-          </Link>
+          </a>
         </li>
         <li>
-          <Link href="/projects" passHref>
+          <a href="/projects">
             <StyledLink>projects</StyledLink>
-          </Link>
+          </a>
         </li>
       </List>
     </Header>
