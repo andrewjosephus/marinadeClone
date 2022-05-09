@@ -16,6 +16,7 @@ import { projectData } from './Data';
 import { KeywordTag } from './Filter';
 
 interface ProjectData {
+  link: string;
   title: string;
   detail: string;
 }
@@ -27,28 +28,21 @@ interface DataHolder {
 interface Data {
   [key: string]: ProjectData[];
 }
-export function ProjectSpace() {
-  const [keywords, setKeywords] = React.useState<string[]>([]);
-  const [data, setData] = React.useState<Data>({});
 
-  function handleClick(keyword: string) {
-    const newSelectedKeywords = [...keywords];
-    if (keywords.includes(keyword)) {
-      const index = keywords.indexOf(keyword);
-      newSelectedKeywords.splice(index, 1);
-    } else {
-      newSelectedKeywords.push(keyword);
-    }
-    setKeywords(newSelectedKeywords);
-  }
+interface ProjectWriteupsProps {
+  keywords: string[];
+}
+
+const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
+  const { keywords } = props;
+  const [data, setData] = React.useState<Data>({});
 
   if (Object.keys(data).length === 0) {
     setData(projectData);
   }
 
-  const dataHolder: DataHolder = {};
-
   React.useEffect(() => {
+    const dataHolder: DataHolder = {};
     const years = Object.keys(projectData);
     years.reverse();
 
@@ -56,7 +50,6 @@ export function ProjectSpace() {
       let re = new RegExp(keyword, 'i');
 
       years.forEach((year: string) => {
-        // How do I type this??
         if (dataHolder[year] == null) {
           dataHolder[year] = [];
         }
@@ -78,10 +71,55 @@ export function ProjectSpace() {
       });
     });
     setData(dataHolder);
-  }, [dataHolder, keywords]);
+  }, [keywords]);
 
   const years = Object.keys(data);
   years.reverse();
+
+  return (
+    <WriteupWrapper width={100}>
+      {years.map((year) => (
+        <>
+          <WriteupTitles marginBlockEnd={5} key={year}>
+            {year}
+          </WriteupTitles>
+          <RedLine></RedLine>
+          <Projectblocks>
+            <Projectlist>
+              {data[year].map(
+                (writeup: { link: string; title: string; detail: string }) => (
+                  <li key={writeup.title}>
+                    <StyledALink href={writeup['link']} target="_blank">
+                      {writeup['title']}
+                    </StyledALink>
+                    <Projectwriteup>{writeup['detail']}</Projectwriteup>
+                  </li>
+                )
+              )}
+            </Projectlist>
+          </Projectblocks>
+        </>
+      ))}
+
+      <YellowLine />
+    </WriteupWrapper>
+  );
+};
+
+export function ProjectSpace() {
+  const [keywords, setKeywords] = React.useState<string[]>([]);
+
+  function handleClick(keyword: string) {
+    const newSelectedKeywords = [...keywords];
+    if (keywords.includes(keyword)) {
+      const index = keywords.indexOf(keyword);
+      newSelectedKeywords.splice(index, 1);
+    } else {
+      newSelectedKeywords.push(keyword);
+    }
+    setKeywords(newSelectedKeywords);
+  }
+
   return (
     <Projectgrid>
       <Projectfilterarea>
@@ -90,30 +128,7 @@ export function ProjectSpace() {
         </WriteupTitles>
         <KeywordTag updateKeywords={handleClick} selectedKeywords={keywords} />
       </Projectfilterarea>
-      <WriteupWrapper width={100}>
-        {years.map((year) => (
-          <>
-            <WriteupTitles marginBlockEnd={5} key={year}>
-              {year}
-            </WriteupTitles>
-            <RedLine></RedLine>
-            <Projectblocks>
-              <Projectlist>
-                {data[year].map(
-                  (writeup: { title: string; detail: string }) => (
-                    <li key={writeup.title}>
-                      <StyledALink>{writeup['title']}</StyledALink>
-                      <Projectwriteup>{writeup['detail']}</Projectwriteup>
-                    </li>
-                  )
-                )}
-              </Projectlist>
-            </Projectblocks>
-          </>
-        ))}
-
-        <YellowLine />
-      </WriteupWrapper>
+      <ProjectWriteups keywords={keywords} />
     </Projectgrid>
   );
 }

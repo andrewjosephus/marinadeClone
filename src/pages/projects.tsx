@@ -9,8 +9,6 @@ import CenterLayout from '../layouts/CenterLayout';
 import { Body, Landing, Main, Page, Textbox } from './styled';
 
 const Home: NextPage = function () {
-  const arr = [{ writeup: 'blah blah blah', link: 'hello' }];
-
   return (
     <CenterLayout>
       <Head>
@@ -19,8 +17,6 @@ const Home: NextPage = function () {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        {/* header is 10vh */}
-
         <HeaderBar />
         <Body>
           <Page height={'55vh'}>

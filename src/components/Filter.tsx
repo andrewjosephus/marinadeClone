@@ -33,7 +33,6 @@ interface KeywordTagProps {
 
 export const KeywordTag: React.FC<KeywordTagProps> = function (props) {
   const { updateKeywords, selectedKeywords } = props;
-  // const [selectedKeywords, setSelectedKeywords] = React.useState<string[]>([]);
 
   const isKeywordSelected = (keyword: string) => {
     return selectedKeywords.includes(keyword);
