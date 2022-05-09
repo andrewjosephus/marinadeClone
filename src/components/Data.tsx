@@ -17,7 +17,7 @@ interface DataHolder {
 }
 
 export const projectData: DataHolder = {
-  2021: [
+  '2021': [
     {
       link: '#',
       title: 'Outsystems Traineeship',
@@ -35,7 +35,7 @@ export const projectData: DataHolder = {
       detail: 'Completed an Outsystems Traditonal Web Certification bootcamp',
     },
   ],
-  2020: [
+  '2020': [
     {
       link: 'https://www.sheenrealty.com',
       title: 'Created first freelance website',
@@ -58,7 +58,7 @@ export const projectData: DataHolder = {
       detail: "Ended my contract with the force as I couldn't fly properly :(",
     },
   ],
-  2019: [
+  '2019': [
     {
       link: 'https://i.imgur.com/c02AeMD.jpg',
       title: 'Flying planes',
