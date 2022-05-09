@@ -129,10 +129,6 @@ export const WriteupWrapper = styled.div<WriteupWrapperProps>`
   width: ${(props) => props.width}%;
 `;
 
-// interface WriteupProps {
-//   height: string;
-// }
-
 export const WriteupBlock = styled.div`
   display: inherit;
   flex-direction: column;

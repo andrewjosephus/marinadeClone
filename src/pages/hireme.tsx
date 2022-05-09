@@ -25,7 +25,6 @@ const Home: NextPage = function () {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        {/* header is 10vh */}
         <HeaderBar />
         <Body>
           <Page height={'55vh'}>

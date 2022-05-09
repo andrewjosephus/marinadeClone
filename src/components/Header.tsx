@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { Header, List, StyledLink } from '../pages/styled';
