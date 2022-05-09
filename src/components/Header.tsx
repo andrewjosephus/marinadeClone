@@ -29,7 +29,7 @@ export const HeaderBar = () => {
       <List>
         <li>
           <a href={'/'}>
-            <Image src="/house.png" height={20} width={20} alt="My face" />{' '}
+            <Image src="/house.png" height={20} width={20} alt="Home" />{' '}
           </a>
         </li>
         <li>
