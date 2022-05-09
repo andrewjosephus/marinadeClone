@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import { Header, List, StyledLink } from '../pages/styled';
@@ -27,7 +28,9 @@ export const HeaderBar = () => {
     <Header>
       <List>
         <li style={{ fontFamily: 'og-emoji, sans-serif;' }}>
-          <a href={'/'}>🏠</a>
+          <a href={'/'}>
+            <Image src="/house.png" height={20} width={20} alt="My face" />{' '}
+          </a>
         </li>
         <li>
           <a href="/hireme">
