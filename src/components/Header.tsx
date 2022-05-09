@@ -27,7 +27,7 @@ export const HeaderBar = () => {
   return (
     <Header>
       <List>
-        <li style={{ fontFamily: 'og-emoji, sans-serif;' }}>
+        <li>
           <a href={'/'}>
             <Image src="/house.png" height={20} width={20} alt="My face" />{' '}
           </a>
