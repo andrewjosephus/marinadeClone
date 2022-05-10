@@ -21,10 +21,12 @@ interface ProjectData {
   detail: string;
 }
 
+// There is a DataHolder interface in `Data.tsx` already
 interface DataHolder {
   [key: string]: ProjectData[];
 }
 
+// Is this really necessary since it is the same as DataHolder?
 interface Data {
   [key: string]: ProjectData[];
 }
@@ -33,8 +35,10 @@ interface ProjectWriteupsProps {
   keywords: string[];
 }
 
+// This should be in its own file
 const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
   const { keywords } = props;
+  // You can set an initial state here https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
   const [data, setData] = React.useState<Data>({});
 
   if (Object.keys(data).length === 0) {
@@ -44,8 +48,20 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
   React.useEffect(() => {
     const dataHolder: DataHolder = {};
     const years = Object.keys(projectData);
+    /* 
+      1. Is the reverse necessary?
+      2. Avoid mutation unless absolutely necessary. Consider Object.keys(projectData).reverse()
+          or other approaches that doesn't require the reverse.
+    */
     years.reverse();
 
+    /* 
+      I think you should rewrite this portion. Instead of starting from an empty object,
+      start from making a copy of projectData and try to make use of array.filter.
+
+      Kevin Kelly: To make something good, just do it. To make something grate, just re-do it,
+      re-do it, redo it. The secret to making fine things is in remaking them.
+    */
     keywords.forEach((keyword) => {
       let re = new RegExp(keyword, 'i');
 
@@ -57,6 +73,19 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
           if (dataHolder[year].includes(obj)) {
             return;
           }
+          // Prefer early returns/exits https://forum.freecodecamp.org/t/the-return-early-pattern-explained-with-javascript-examples/19364
+
+          /* 
+          if (obj['title'].search(re) > 0) {
+            dataHolder[year].push(obj);
+            return;
+          }
+
+          if (obj['detail'].search(re) > 0) {
+            dataHolder[year].push(obj);
+            return;
+          } */
+
           if (obj['title'].search(re) == -1) {
             if (obj['detail'].search(re) != -1) {
               dataHolder[year].push(obj);
@@ -65,6 +94,7 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
             dataHolder[year].push(obj);
           }
         });
+        // Use triple equals, dataHolder[year].length === 0
         if (dataHolder[year].length == 0) {
           delete dataHolder[year];
         }
@@ -80,6 +110,7 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
     <WriteupWrapper width={100}>
       {years.map((year) => (
         <>
+          {/* Naming is off, should probably be Title instead of Titles */}
           <WriteupTitles marginBlockEnd={5} key={year}>
             {year}
           </WriteupTitles>
@@ -106,6 +137,11 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
   );
 };
 
+/* 
+ 1. Export default when there is only one function to export.
+ 2. Should type the function, like const ProjectSpace: React.FC = function () {};
+ 3. The name of the file should match the exported function, ProjectSpace.tsx.
+*/
 export function ProjectSpace() {
   const [keywords, setKeywords] = React.useState<string[]>([]);
 
