@@ -13,7 +13,7 @@ import {
   YellowLine,
 } from '../pages/styled';
 import { projectData } from './Data';
-import { KeywordTag } from './Filter';
+import { KeywordTags } from './Filter';
 
 interface ProjectData {
   link: string;
@@ -126,7 +126,7 @@ export function ProjectSpace() {
         <WriteupTitles marginBlockEnd={0}>
           Filter by <p>Year and Type</p>{' '}
         </WriteupTitles>
-        <KeywordTag updateKeywords={handleClick} selectedKeywords={keywords} />
+        <KeywordTags updateKeywords={handleClick} selectedKeywords={keywords} />
       </Projectfilterarea>
       <ProjectWriteups keywords={keywords} />
     </Projectgrid>
