@@ -30,7 +30,7 @@ const Home: NextPage = function () {
           <Page height={'55vh'}>
             <Landing>
               <Textbox justifyContent={'center'}>
-                <h1>Let's work together</h1>
+                <h1>Let&#39;s work together</h1>
               </Textbox>
               <Image
                 src="/img2.jpg"
@@ -43,12 +43,12 @@ const Home: NextPage = function () {
           <Page height={'110vh'}>
             <WriteupWrapper width={40}>
               <Writeup>
-                For the last decade I've been working on user centered projects,
-                from delivering a feature to the billions of users of Chrome, to
-                taking a machine learning model and making it relevant to
-                someone with no technical training. Nowadays I work freelance as
-                a tech advisor or consultant, helping teams understand their
-                users and their processes.
+                For the last decade I&#39;ve been working on user centered
+                projects, from delivering a feature to the billions of users of
+                Chrome, to taking a machine learning model and making it
+                relevant to someone with no technical training. Nowadays I work
+                freelance as a tech advisor or consultant, helping teams
+                understand their users and their processes.
               </Writeup>
               <Writeup>I can help your team with:</Writeup>
               <Writeup>
@@ -88,7 +88,8 @@ const Home: NextPage = function () {
                 </ul>
               </Writeup>
               <Writeup>
-                If this sounds like something you're interested in, send me an
+                If this sounds like something you&#39;re interested in, send me
+                an
                 {` `}
                 <StyledALink href="https://www.youtube.com/watch?v=XOi2jFIhZhA">
                   email!
