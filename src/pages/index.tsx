@@ -68,6 +68,7 @@ const Home: NextPage = function () {
               <WriteupBlock>
                 <WriteupTitles marginBlockEnd={40}>Hire Me</WriteupTitles>
                 <Writeup>
+                  {/* Notice the eslint message: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;` */}
                   I've just ended an 2 year stint as a Pilot Trainee at the{` `}
                   <StyledALink
                     href="https://form.gov.sg/#!/6253a1db6f45270011b89833"
@@ -87,6 +88,7 @@ const Home: NextPage = function () {
                   <StyledALink>the firehose</StyledALink>
                 </Writeup>
                 <WriteupTitles marginBlockEnd={40}>Projects</WriteupTitles>
+                {/* Should avoid using style, add the margin bottom into the styled component */}
                 <Writeup style={{ marginBottom: '60px' }}>
                   I've just ended an 8 year stint as a Senior Engineer at
                   Google, where I worked on making music and art and all sorts

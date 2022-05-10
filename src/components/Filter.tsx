@@ -31,6 +31,7 @@ interface KeywordTagProps {
   selectedKeywords: string[];
 }
 
+// Component naming is off, KeywordTag implies that there is only one tag. Consider names like Tags or KeywordTags
 export const KeywordTag: React.FC<KeywordTagProps> = function (props) {
   const { updateKeywords, selectedKeywords } = props;
 
@@ -38,6 +39,7 @@ export const KeywordTag: React.FC<KeywordTagProps> = function (props) {
     return selectedKeywords.includes(keyword);
   };
 
+  // Is this necessary? I think can just pass `updateKeywords` into `handleTagClick`
   const handleKeywordClick = (keyword: string) => {
     updateKeywords(keyword);
   };

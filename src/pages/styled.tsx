@@ -75,6 +75,7 @@ interface PageProps {
 }
 
 export const Page = styled.div<PageProps>`
+  // When using flex, should be more explicit and set display: flex rather than inheriting
   display: inherit;
   height: ${(props) => props.height};
   flex-direction: column;
@@ -127,6 +128,7 @@ interface WriteupWrapperProps {
 export const WriteupWrapper = styled.div<WriteupWrapperProps>`
   height: 100vh;
   width: ${(props) => props.width}%;
+  border: 1px solid red;
 `;
 
 export const WriteupBlock = styled.div`
@@ -177,6 +179,7 @@ interface TitleProps {
 }
 
 export const WriteupTitles = styled.h1<TitleProps>`
+  border: 1px solid green;
   margin-block-end: ${(props) => props.marginBlockEnd}px;
   p {
     margin-block-start: 0;
@@ -189,6 +192,7 @@ export const Projectgrid = styled.div`
   grid-template-columns: 30% 40% 30%;
 `;
 
+// Inconsistent naming, should keep things to CamelCase for styled components
 export const Projectblocks = styled.div`
   margin-top: 10px;
   margin-bottom: 50px;
