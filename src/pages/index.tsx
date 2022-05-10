@@ -34,7 +34,7 @@ const Home: NextPage = function () {
               <Textbox justifyContent={'space-between'}>
                 <h1>Andrew Josephus</h1>
                 <p>
-                  Paragraph about me: Im a creative engineer who builds
+                  Paragraph about me: I&#39;m a creative engineer who builds
                   delightful web experiences. I can advise your company about
                   the web platform, performance, creative user interactions, and
                   usable machine learning.
@@ -53,7 +53,7 @@ const Home: NextPage = function () {
             <WriteupWrapper width={40}>
               <WriteupBlock>
                 <Writeup>
-                  I've just ended an 8 year stint as a Senior Engineer at
+                  I&#39;ve just ended an 8 year stint as a Senior Engineer at
                   Google, where I worked on making music and art and all sorts
                   of creative interactions with Machine Learning, web components
                   and web standards, and the guts of Chromium. You can read a
@@ -61,14 +61,15 @@ const Home: NextPage = function () {
                   is on GitHub or on Glitch. <br /> <br /> I am available for
                   freelance work in a consulting capacity, or as a tech advisor.
                   If you would like to get in touch with me about working with
-                  you, email me and we'll chat!
+                  you, email me and we&#39;ll chat!
                 </Writeup>
                 <YellowLine></YellowLine>
               </WriteupBlock>
               <WriteupBlock>
                 <WriteupTitles marginBlockEnd={40}>Hire Me</WriteupTitles>
                 <Writeup>
-                  I've just ended an 2 year stint as a Pilot Trainee at the{` `}
+                  I&#39;ve just ended an 2 year stint as a Pilot Trainee at the
+                  {` `}
                   <StyledALink
                     href="https://form.gov.sg/#!/6253a1db6f45270011b89833"
                     target="_blank"
@@ -88,7 +89,7 @@ const Home: NextPage = function () {
                 </Writeup>
                 <WriteupTitles marginBlockEnd={40}>Projects</WriteupTitles>
                 <Writeup style={{ marginBottom: '60px' }}>
-                  I've just ended an 8 year stint as a Senior Engineer at
+                  I&#39;ve just ended an 8 year stint as a Senior Engineer at
                   Google, where I worked on making music and art and all sorts
                   of creative interactions with Machine Learning, web components
                   and web standards, and the guts of Chromium. You can read a
