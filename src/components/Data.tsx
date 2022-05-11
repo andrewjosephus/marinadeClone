@@ -6,13 +6,13 @@ export const listOfKeywords = [
   'learning',
 ];
 
-interface ProjectData {
+export interface ProjectData {
   link: string;
   title: string;
   detail: string;
 }
 
-interface DataHolder {
+export interface DataHolder {
   [key: string]: ProjectData[];
 }
 
