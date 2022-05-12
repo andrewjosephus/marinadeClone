@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import { HeaderBar } from '../components/Header';
-import { ProjectSpace } from '../components/Projects';
+import ProjectSpace from '../components/Projects';
 import CenterLayout from '../layouts/CenterLayout';
 import { Body, Landing, Main, Page, Textbox } from './styled';
 

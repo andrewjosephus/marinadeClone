@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Projectfilterarea, Projectgrid, WriteupTitles } from '../pages/styled';
+import { ProjectFilterArea, ProjectGrid, WriteupTitle } from '../pages/styled';
 import { KeywordTags } from './Filter';
 import ProjectWriteups from './ProjectWriteups';
 
-export function ProjectSpace() {
+const ProjectSpace = () => {
   const [keywords, setKeywords] = React.useState<string[]>([]);
 
   function handleClick(keyword: string) {
@@ -19,14 +19,16 @@ export function ProjectSpace() {
   }
 
   return (
-    <Projectgrid>
-      <Projectfilterarea>
-        <WriteupTitles marginBlockEnd={0}>
+    <ProjectGrid>
+      <ProjectFilterArea>
+        <WriteupTitle marginBlockEnd={0}>
           Filter by <p>Year and Type</p>{' '}
-        </WriteupTitles>
+        </WriteupTitle>
         <KeywordTags updateKeywords={handleClick} selectedKeywords={keywords} />
-      </Projectfilterarea>
+      </ProjectFilterArea>
       <ProjectWriteups keywords={keywords} />
-    </Projectgrid>
+    </ProjectGrid>
   );
-}
+};
+
+export default ProjectSpace;

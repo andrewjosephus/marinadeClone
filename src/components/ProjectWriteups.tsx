@@ -1,12 +1,12 @@
 import React from 'react';
 
 import {
-  Projectblocks,
+  ProjectBlocks,
   Projectlist,
   Projectwriteup,
   RedLine,
   StyledALink,
-  WriteupTitles,
+  WriteupTitle,
   WriteupWrapper,
   YellowLine,
 } from '../pages/styled';
@@ -63,11 +63,11 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
         const projectData = newData[0][1];
         return (
           <>
-            <WriteupTitles marginBlockEnd={5} key={year}>
+            <WriteupTitle marginBlockEnd={5} key={year}>
               {year}
-            </WriteupTitles>
+            </WriteupTitle>
             <RedLine></RedLine>
-            <Projectblocks>
+            <ProjectBlocks>
               <Projectlist>
                 {projectData.map((prjdata: ProjectData) => (
                   <li key={prjdata['title']}>
@@ -78,7 +78,7 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
                   </li>
                 ))}
               </Projectlist>
-            </Projectblocks>
+            </ProjectBlocks>
           </>
         );
       })}
