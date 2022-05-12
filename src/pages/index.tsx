@@ -13,7 +13,7 @@ import {
   Textbox,
   Writeup,
   WriteupBlock,
-  WriteupTitles,
+  WriteupTitle,
   WriteupWrapper,
   YellowLine,
 } from './styled';
@@ -66,7 +66,7 @@ const Home: NextPage = function () {
                 <YellowLine></YellowLine>
               </WriteupBlock>
               <WriteupBlock>
-                <WriteupTitles marginBlockEnd={40}>Hire Me</WriteupTitles>
+                <WriteupTitle marginBlockEnd={40}>Hire Me</WriteupTitle>
                 <Writeup>
                   I&#39;ve just ended an 2 year stint as a Pilot Trainee at the
                   {` `}
@@ -81,14 +81,14 @@ const Home: NextPage = function () {
                   instructors. You cannot read a bit more about me and my past
                   work. Most of my personal code is on my local machine at home.
                 </Writeup>
-                <Writeup>
+                <Writeup marginBottom={50}>
                   <strong>RSS Feeds: </strong>
                   <StyledALink>the firehose</StyledALink> |{` `}
                   <StyledALink>the firehose</StyledALink> |{` `}
                   <StyledALink>the firehose</StyledALink>
                 </Writeup>
-                <WriteupTitles marginBlockEnd={40}>Projects</WriteupTitles>
-                <Writeup style={{ marginBottom: '60px' }}>
+                <WriteupTitle marginBlockEnd={40}>Projects</WriteupTitle>
+                <Writeup>
                   I&#39;ve just ended an 8 year stint as a Senior Engineer at
                   Google, where I worked on making music and art and all sorts
                   of creative interactions with Machine Learning, web components

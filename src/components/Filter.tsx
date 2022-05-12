@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Projectbutton } from '../pages/styled';
+import { ProjectButton } from '../pages/styled';
 import { listOfKeywords } from './Data';
 
 interface TagProps {
@@ -17,12 +17,12 @@ const Tag: React.FC<TagProps> = function (props) {
   };
 
   return (
-    <Projectbutton
+    <ProjectButton
       backgroundColor={isSelected ? 'red' : '#273641'}
       onClick={handleClick}
     >
       # {keyword}
-    </Projectbutton>
+    </ProjectButton>
   );
 };
 

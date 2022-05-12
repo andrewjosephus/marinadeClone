@@ -10,7 +10,7 @@ export const Main = styled.main`
 `;
 
 export const Header = styled.header`
-  display: inherit;
+  display: flex;
   justify-content: center;
   align-items: flex-end;
   height: 10vh;
@@ -19,7 +19,7 @@ export const Header = styled.header`
 `;
 
 export const List = styled.ul`
-  display: inherit;
+  display: flex;
   width: 55%;
   list-style: none;
   justify-content: space-around;
@@ -75,7 +75,7 @@ interface PageProps {
 }
 
 export const Page = styled.div<PageProps>`
-  display: inherit;
+  display: flex;
   height: ${(props) => props.height};
   flex-direction: column;
   justify-content: center;
@@ -84,12 +84,12 @@ export const Page = styled.div<PageProps>`
 
 export const Body = styled.div`
   width: 100%;
-  display: inherit;
+  display: flex;
   flex-direction: column;
 `;
 
 export const Landing = styled.div`
-  display: inherit;
+  display: flex;
   width: 40%;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -104,7 +104,7 @@ interface TextboxProps {
 }
 
 export const Textbox = styled.div<TextboxProps>`
-  display: inherit;
+  display: flex;
   flex-direction: column;
   width: 50%;
   justify-content: ${(props) => props.justifyContent};
@@ -130,12 +130,16 @@ export const WriteupWrapper = styled.div<WriteupWrapperProps>`
 `;
 
 export const WriteupBlock = styled.div`
-  display: inherit;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
 `;
 
-export const Writeup = styled.div`
+interface WriteupProps {
+  marginBottom?: number;
+}
+
+export const Writeup = styled.div<WriteupProps>`
   display: block;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -143,6 +147,7 @@ export const Writeup = styled.div`
   margin-right: 0;
   line-height: 1.5;
   font-size: 1.2em;
+  margin-bottom: ${(props) => props.marginBottom}px;
 
   ul {
     li {
@@ -176,20 +181,20 @@ interface TitleProps {
   marginBlockEnd: number;
 }
 
-export const WriteupTitles = styled.h1<TitleProps>`
+export const WriteupTitle = styled.h1<TitleProps>`
   margin-block-end: ${(props) => props.marginBlockEnd}px;
   p {
     margin-block-start: 0;
   }
 `;
 
-export const Projectgrid = styled.div`
+export const ProjectGrid = styled.div`
   display: grid;
   width: 100%;
   grid-template-columns: 30% 40% 30%;
 `;
 
-export const Projectblocks = styled.div`
+export const ProjectBlocks = styled.div`
   margin-top: 10px;
   margin-bottom: 50px;
   width: 100%;
@@ -225,7 +230,7 @@ export const Projectwriteup = styled.p`
   }
 `;
 
-export const Projectfilterarea = styled.div`
+export const ProjectFilterArea = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 20%;
@@ -235,7 +240,7 @@ export const Projectfilterarea = styled.div`
 interface ProjectButtonProps {
   backgroundColor: string;
 }
-export const Projectbutton = styled.button<ProjectButtonProps>`
+export const ProjectButton = styled.button<ProjectButtonProps>`
   width: fit-content;
   margin-top: 5px;
   padding: 8px 16px;
