@@ -20,54 +20,46 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
   const { keywords } = props;
   const [data, setData] = React.useState<any[]>(() => projectData);
 
-  if (Object.keys(data).length === 0) {
-    setData(projectData);
-  }
-
-  React.useEffect(() => {
-    const dataHolder = [...projectData];
-    const years = Object.keys(projectData).reverse();
-
-    keywords.forEach((keyword) => {
-      let re = new RegExp(keyword, 'i');
-    });
-
-    years.forEach((year: string) => {
-      // if (dataHolder[year] == null) {
-      //   dataHolder[year] = [];
-      // }
-
-      dataHolder[year].filter((obj) => {});
-
-      // projectData[year].forEach((obj: ProjectData) => {
-      //   if (dataHolder[year].includes(obj)) {
-      //     return;
-      //   }
-      //   if (obj['title'].search(re) == -1) {
-      //     if (obj['detail'].search(re) != -1) {
-      //       dataHolder[year].push(obj);
-      //     }
-      //   } else {
-      //     dataHolder[year].push(obj);
-      //   }
-      // });
-      if (dataHolder[year].length == 0) {
-        delete dataHolder[year];
-      }
-    });
-    setData(dataHolder);
-  }, [keywords]);
-
-  const years = [];
+  const years: string[] = [];
   for (const i in data) {
     years.push(data[i][0]);
   }
-  const filteredYears = data.filter((yearItem) => yearItem[1].length > 0);
+
+  React.useEffect(() => {
+    if (keywords.length < 1) {
+      setData(projectData);
+      return;
+    }
+    const dataHolder = [...projectData];
+
+    const dataHolderFiltered = dataHolder.map((arrObj) => {
+      return [
+        arrObj[0],
+        arrObj[1].filter((content: ProjectData) => {
+          for (const keyword of keywords) {
+            let re = new RegExp(keyword, 'i');
+            if (
+              content['title'].search(re) !== -1 ||
+              content['detail'].search(re) !== -1
+            ) {
+              return true;
+            }
+          }
+        }),
+      ];
+    });
+
+    setData(dataHolderFiltered);
+  }, [keywords]);
+  const filteredData = data.filter((yearItem) => yearItem[1].length > 0);
 
   return (
     <WriteupWrapper width={100}>
       {years.map((year) => {
-        const newData = filteredYears.filter((obj) => obj[0] === year);
+        const newData = filteredData.filter((obj) => obj[0] === year);
+        if (newData.length < 1) {
+          return;
+        }
         const projectData = newData[0][1];
         return (
           <>
