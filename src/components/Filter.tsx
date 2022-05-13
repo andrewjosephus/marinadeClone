@@ -9,6 +9,11 @@ interface TagProps {
   keyword: string;
 }
 
+interface KeywordTagsProps {
+  updateKeywords: (keyword: string) => void;
+  selectedKeywords: string[];
+}
+
 const Tag: React.FC<TagProps> = function (props) {
   const { keyword, handleTagClick, isSelected } = props;
 
@@ -26,12 +31,7 @@ const Tag: React.FC<TagProps> = function (props) {
   );
 };
 
-interface KeywordTagsProps {
-  updateKeywords: (keyword: string) => void;
-  selectedKeywords: string[];
-}
-
-export const KeywordTags: React.FC<KeywordTagsProps> = function (props) {
+const KeywordTags: React.FC<KeywordTagsProps> = function (props) {
   const { updateKeywords, selectedKeywords } = props;
 
   const isKeywordSelected = (keyword: string) => {
@@ -51,3 +51,5 @@ export const KeywordTags: React.FC<KeywordTagsProps> = function (props) {
     </>
   );
 };
+
+export default KeywordTags;

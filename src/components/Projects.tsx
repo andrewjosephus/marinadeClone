@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ProjectFilterArea, ProjectGrid, WriteupTitle } from '../pages/styled';
-import { KeywordTags } from './Filter';
+import KeywordTags from './Filter';
 import ProjectWriteups from './ProjectWriteups';
 
 const ProjectSpace = () => {
