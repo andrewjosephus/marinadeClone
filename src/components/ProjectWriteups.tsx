@@ -18,7 +18,7 @@ interface ProjectWriteupsProps {
 
 const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
   const { keywords } = props;
-  const [data, setData] = React.useState<ProjectData[]>(() => projectData);
+  const [data, setData] = React.useState<ProjectData[]>([...projectData]);
 
   const years: string[] = [];
   for (const yearObj of data) {
@@ -26,29 +26,49 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
   }
   React.useEffect(() => {
     if (keywords.length < 1) {
-      setData(projectData);
+      setData([...projectData]);
+      console.log('projectData');
+      console.log(projectData);
       return;
     }
+
     const dataHolder = [...projectData];
     console.log(dataHolder);
 
-    const dataHolderFiltered = dataHolder.map((arrObj) => {
-      const filter = arrObj['data'].filter((content) => {
+    // dataHolder.map((arrObj) => {
+    //   const filter = arrObj['data'].filter((content) => {
+    //     for (const keyword of keywords) {
+    //       let re = new RegExp(keyword, 'i');
+    //       if (
+    //         content['title'].search(re) !== -1 ||
+    //         content['detail'].search(re) !== -1
+    //       ) {
+    //         return arrObj;
+    //       }
+    //     }
+    //   });
+    //   console.log(filter);
+    //   dataHolder
+    // });
+
+    for (const i in dataHolder) {
+      const filter = dataHolder[i]['data'].filter((content) => {
         for (const keyword of keywords) {
           let re = new RegExp(keyword, 'i');
           if (
             content['title'].search(re) !== -1 ||
             content['detail'].search(re) !== -1
           ) {
-            return arrObj;
+            return dataHolder[i];
           }
         }
       });
-      console.log(filter);
-    });
+      dataHolder[i]['data'] = filter;
+    }
+
     console.log('dataHolderFiltered');
-    console.log(dataHolderFiltered);
-    setData(dataHolderFiltered);
+    console.log(dataHolder);
+    setData(dataHolder);
   }, [keywords]);
 
   const filteredData = data.filter((yearItem) => yearItem['data'].length > 0);
@@ -60,7 +80,7 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
         if (newData.length < 1) {
           return;
         }
-        const projectData = newData[0]['data'];
+        const data = newData[0]['data'];
         return (
           <>
             <WriteupTitle marginBlockEnd={5} key={year}>
@@ -69,7 +89,7 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
             <RedLine></RedLine>
             <ProjectBlocks>
               <Projectlist>
-                {projectData.map((prjdata) => (
+                {data.map((prjdata) => (
                   <li key={prjdata['title']}>
                     <StyledALink href={prjdata['link']} target="_blank">
                       {prjdata['title']}
