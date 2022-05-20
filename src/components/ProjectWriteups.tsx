@@ -27,29 +27,14 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
   React.useEffect(() => {
     if (keywords.length < 1) {
       setData([...projectData]);
-      console.log('projectData');
-      console.log(projectData);
       return;
     }
 
-    const dataHolder = [...projectData];
-    console.log(dataHolder);
-
-    // dataHolder.map((arrObj) => {
-    //   const filter = arrObj['data'].filter((content) => {
-    //     for (const keyword of keywords) {
-    //       let re = new RegExp(keyword, 'i');
-    //       if (
-    //         content['title'].search(re) !== -1 ||
-    //         content['detail'].search(re) !== -1
-    //       ) {
-    //         return arrObj;
-    //       }
-    //     }
-    //   });
-    //   console.log(filter);
-    //   dataHolder
-    // });
+    const dataHolder = [
+      { ...projectData[0] },
+      { ...projectData[1] },
+      { ...projectData[2] },
+    ];
 
     for (const i in dataHolder) {
       const filter = dataHolder[i]['data'].filter((content) => {
@@ -66,8 +51,6 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
       dataHolder[i]['data'] = filter;
     }
 
-    console.log('dataHolderFiltered');
-    console.log(dataHolder);
     setData(dataHolder);
   }, [keywords]);
 

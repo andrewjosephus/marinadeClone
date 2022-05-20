@@ -116,6 +116,11 @@ export const projectData: ProjectData[] = [
       },
       {
         link: '#',
+        title: 'Started learning HTML and CSS',
+        detail: 'Started learning HTML and CSS to begin my developer journey',
+      },
+      {
+        link: '#',
         title: 'Ended career with airforce',
         detail:
           "Ended my contract with the force as I couldn't fly properly :(",
