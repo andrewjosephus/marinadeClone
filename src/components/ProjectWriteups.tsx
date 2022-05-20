@@ -18,49 +18,52 @@ interface ProjectWriteupsProps {
 
 const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
   const { keywords } = props;
-  const [data, setData] = React.useState<any[]>(() => projectData);
+  const [data, setData] = React.useState<ProjectData[]>([...projectData]);
 
   const years: string[] = [];
-  for (const i in data) {
-    years.push(data[i][0]);
+  for (const yearObj of data) {
+    years.push(yearObj['title']);
   }
-
   React.useEffect(() => {
     if (keywords.length < 1) {
-      setData(projectData);
+      setData([...projectData]);
       return;
     }
-    const dataHolder = [...projectData];
 
-    const dataHolderFiltered = dataHolder.map((arrObj) => {
-      return [
-        arrObj[0],
-        arrObj[1].filter((content: ProjectData) => {
-          for (const keyword of keywords) {
-            let re = new RegExp(keyword, 'i');
-            if (
-              content['title'].search(re) !== -1 ||
-              content['detail'].search(re) !== -1
-            ) {
-              return true;
-            }
+    const dataHolder = [
+      { ...projectData[0] },
+      { ...projectData[1] },
+      { ...projectData[2] },
+    ];
+
+    for (const i in dataHolder) {
+      const filter = dataHolder[i]['data'].filter((content) => {
+        for (const keyword of keywords) {
+          let re = new RegExp(keyword, 'i');
+          if (
+            content['title'].search(re) !== -1 ||
+            content['detail'].search(re) !== -1
+          ) {
+            return dataHolder[i];
           }
-        }),
-      ];
-    });
+        }
+      });
+      dataHolder[i]['data'] = filter;
+    }
 
-    setData(dataHolderFiltered);
+    setData(dataHolder);
   }, [keywords]);
-  const filteredData = data.filter((yearItem) => yearItem[1].length > 0);
+
+  const filteredData = data.filter((yearItem) => yearItem['data'].length > 0);
 
   return (
     <WriteupWrapper width={100}>
       {years.map((year) => {
-        const newData = filteredData.filter((obj) => obj[0] === year);
+        const newData = filteredData.filter((obj) => obj['title'] === year);
         if (newData.length < 1) {
           return;
         }
-        const projectData = newData[0][1];
+        const data = newData[0]['data'];
         return (
           <>
             <WriteupTitle marginBlockEnd={5} key={year}>
@@ -69,7 +72,7 @@ const ProjectWriteups: React.FC<ProjectWriteupsProps> = (props) => {
             <RedLine></RedLine>
             <ProjectBlocks>
               <Projectlist>
-                {projectData.map((prjdata: ProjectData) => (
+                {data.map((prjdata) => (
                   <li key={prjdata['title']}>
                     <StyledALink href={prjdata['link']} target="_blank">
                       {prjdata['title']}
