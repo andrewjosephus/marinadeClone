@@ -6,7 +6,7 @@ import React from 'react';
 import { HeaderBar } from '../components/Header';
 import ProjectSpace from '../components/Projects';
 import CenterLayout from '../layouts/CenterLayout';
-import { Body, Landing, Main, Page, Textbox } from './styled';
+import { Body, Landing, Main, Page, Textbox } from '../styles/styled';
 
 const Home: NextPage = function () {
   return (

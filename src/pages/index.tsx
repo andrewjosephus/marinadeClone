@@ -16,7 +16,7 @@ import {
   WriteupTitle,
   WriteupWrapper,
   YellowLine,
-} from './styled';
+} from '../styles/styled';
 
 const Home: NextPage = function () {
   return (

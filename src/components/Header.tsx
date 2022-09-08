@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-import { Header, List, StyledLink } from '../pages/styled';
+import { Header, List, StyledLink } from '../styles/styled';
 
 export const HeaderBar = () => {
   const router = useRouter();

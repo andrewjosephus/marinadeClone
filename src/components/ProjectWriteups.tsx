@@ -9,7 +9,7 @@ import {
   WriteupTitle,
   WriteupWrapper,
   YellowLine,
-} from '../pages/styled';
+} from '../styles/styled';
 import { ProjectData, projectData } from './Data';
 
 interface ProjectWriteupsProps {
