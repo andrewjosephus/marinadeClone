@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProjectButton } from '../pages/styled';
+import { ProjectButton } from '../styles/styled';
 import { listOfKeywords } from './Data';
 
 interface TagProps {

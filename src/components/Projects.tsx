@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProjectFilterArea, ProjectGrid, WriteupTitle } from '../pages/styled';
+import { ProjectFilterArea, ProjectGrid, WriteupTitle } from '../styles/styled';
 import KeywordTags from './Filter';
 import ProjectWriteups from './ProjectWriteups';
 
