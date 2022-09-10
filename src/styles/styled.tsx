@@ -106,7 +106,7 @@ interface TextboxProps {
 export const Textbox = styled.div<TextboxProps>`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 45%;
   justify-content: ${(props) => props.justifyContent};
   h1 {
     margin-block: 0;

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { Header, List, StyledLink } from '../styles/styled';
@@ -11,14 +12,14 @@ export const HeaderBar = () => {
       <Header>
         <List>
           <li>
-            <a href="/hireme">
+            <Link href="/hireme" passHref>
               <StyledLink>hire me</StyledLink>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/projects">
+            <Link href="/projects" passHref>
               <StyledLink>projects</StyledLink>
-            </a>
+            </Link>
           </li>
         </List>
       </Header>
@@ -28,19 +29,25 @@ export const HeaderBar = () => {
     <Header>
       <List>
         <li>
-          <a href={'/'}>
-            <Image src="/house.png" height={20} width={20} alt="Home" />{' '}
-          </a>
+          <Link href="/" passHref>
+            <Image
+              className="pointerCursor"
+              src="/house.png"
+              height={20}
+              width={20}
+              alt="Home"
+            />
+          </Link>
         </li>
         <li>
-          <a href="/hireme">
+          <Link href="/hireme" passHref>
             <StyledLink>hire me</StyledLink>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/projects">
+          <Link href="/projects" passHref>
             <StyledLink>projects</StyledLink>
-          </a>
+          </Link>
         </li>
       </List>
     </Header>
