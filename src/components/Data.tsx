@@ -1,10 +1,4 @@
-export const listOfKeywords = [
-  'javascript',
-  'css',
-  'outsystems',
-  'pilot',
-  'learning',
-];
+export const listOfKeywords = ['javascript', 'css', 'outsystems', 'learning'];
 
 interface ProjectDetails {
   link: string;
@@ -18,6 +12,16 @@ export interface ProjectData {
 }
 
 export const projectData: ProjectData[] = [
+  {
+    title: '2022',
+    data: [
+      {
+        link: 'https://www.taskade.com/',
+        title: 'Taskade Software Engineering Internship',
+        detail: 'Currently working as a Software Engineering Intern at Taskade',
+      },
+    ],
+  },
   {
     title: '2021',
     data: [

@@ -65,7 +65,7 @@ export const StyledALink = styled.a`
   transition: all 0.25s ease;
   color: #f83735;
   :hover {
-    color: #1231b5;
+    color: #f38281;
     cursor: pointer;
   }
 `;
